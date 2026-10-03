@@ -1,0 +1,90 @@
+{
+  "id": "gcloud",
+  "name": "Google Cloud CLI",
+  "description": "Google Cloud CLI 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Google Cloud CLI current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "CLI login 与应用 ADC 不等价；GOOGLE_APPLICATION_CREDENTIALS 外部文件未自动纳入。",
+    "官方要求配置根可写；本模板仅读取，登录/刷新/日志与 API 连接需相应权限。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${CLOUDSDK_CONFIG}",
+          "targetType": "directory",
+          "description": "Google Cloud CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.cloud.google.com/sdk/docs/configurations"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/gcloud",
+          "targetType": "directory",
+          "description": "Google Cloud CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.cloud.google.com/sdk/docs/configurations"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${CLOUDSDK_CONFIG}",
+          "targetType": "directory",
+          "description": "Google Cloud CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.cloud.google.com/sdk/docs/configurations"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/gcloud",
+          "targetType": "directory",
+          "description": "Google Cloud CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.cloud.google.com/sdk/docs/configurations"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${CLOUDSDK_CONFIG}",
+          "targetType": "directory",
+          "description": "Google Cloud CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.cloud.google.com/sdk/docs/configurations"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${APPDATA}/gcloud",
+          "targetType": "directory",
+          "description": "Google Cloud CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.cloud.google.com/sdk/docs/configurations"
+          ]
+        }
+      ]
+    }
+  }
+}

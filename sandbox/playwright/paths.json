@@ -1,0 +1,90 @@
+{
+  "id": "playwright",
+  "name": "Playwright",
+  "description": "Playwright 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Playwright current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "PLAYWRIGHT_BROWSERS_PATH=0 等非路径值不适用此定位式，需使用项目实际目录。",
+    "不授权个人浏览器 profile；install、测试 profile/产物写入、应用连接和监听独立处理。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "custom-browsers",
+          "path": "${PLAYWRIGHT_BROWSERS_PATH}",
+          "targetType": "directory",
+          "description": "Playwright：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://playwright.dev/docs/browsers"
+          ]
+        },
+        {
+          "id": "browsers",
+          "path": "~/Library/Caches/ms-playwright",
+          "targetType": "directory",
+          "description": "Playwright：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://playwright.dev/docs/browsers"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "custom-browsers",
+          "path": "${PLAYWRIGHT_BROWSERS_PATH}",
+          "targetType": "directory",
+          "description": "Playwright：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://playwright.dev/docs/browsers"
+          ]
+        },
+        {
+          "id": "browsers",
+          "path": "~/.cache/ms-playwright",
+          "targetType": "directory",
+          "description": "Playwright：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://playwright.dev/docs/browsers"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "custom-browsers",
+          "path": "${PLAYWRIGHT_BROWSERS_PATH}",
+          "targetType": "directory",
+          "description": "Playwright：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://playwright.dev/docs/browsers"
+          ]
+        },
+        {
+          "id": "browsers",
+          "path": "${LOCALAPPDATA}/ms-playwright",
+          "targetType": "directory",
+          "description": "Playwright：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://playwright.dev/docs/browsers"
+          ]
+        }
+      ]
+    }
+  }
+}

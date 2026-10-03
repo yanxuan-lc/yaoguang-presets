@@ -1,0 +1,86 @@
+{
+  "id": "homebrew",
+  "name": "Homebrew",
+  "description": "Homebrew 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Homebrew current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "prefix 是宽读取候选，可能含其他安装/认证数据；HOMEBREW_PREFIX/CACHE 与非标准路径手工核对。",
+    "已装工具运行不等于 brew install/update；安装、链接、缓存与下载另行授权。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "arm-prefix",
+          "path": "/opt/homebrew",
+          "targetType": "directory",
+          "description": "Homebrew：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.brew.sh/Manpage"
+          ]
+        },
+        {
+          "id": "intel-prefix",
+          "path": "/usr/local",
+          "targetType": "directory",
+          "description": "Homebrew：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.brew.sh/Manpage"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/Library/Caches/Homebrew",
+          "targetType": "directory",
+          "description": "Homebrew：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.brew.sh/Manpage"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "prefix",
+          "path": "/home/linuxbrew/.linuxbrew",
+          "targetType": "directory",
+          "description": "Homebrew：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.brew.sh/Manpage"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/.cache/Homebrew",
+          "targetType": "directory",
+          "description": "Homebrew：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.brew.sh/Manpage"
+          ]
+        },
+        {
+          "id": "xdg-cache",
+          "path": "${XDG_CACHE_HOME}/Homebrew",
+          "targetType": "directory",
+          "description": "Homebrew：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.brew.sh/Manpage"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "id": "rust",
+  "name": "Rust / Cargo / rustup",
+  "description": "Rust / Cargo / rustup 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Cargo current",
+      "rustup current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "Cargo 根包含 credentials.toml、配置、程序和私有依赖，整个目录不是纯缓存。",
+    "credential provider、下载、工具链更新及 target/install 写入另行授权；locked 不等于文件系统只读。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "cargo-home",
+          "path": "~/.cargo",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://doc.rust-lang.org/cargo/guide/cargo-home.html"
+          ]
+        },
+        {
+          "id": "custom-cargo-home",
+          "path": "${CARGO_HOME}",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://doc.rust-lang.org/cargo/guide/cargo-home.html"
+          ]
+        },
+        {
+          "id": "rustup-home",
+          "path": "~/.rustup",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://rust-lang.github.io/rustup/environment-variables.html"
+          ]
+        },
+        {
+          "id": "custom-rustup-home",
+          "path": "${RUSTUP_HOME}",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://rust-lang.github.io/rustup/environment-variables.html"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "cargo-home",
+          "path": "~/.cargo",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://doc.rust-lang.org/cargo/guide/cargo-home.html"
+          ]
+        },
+        {
+          "id": "custom-cargo-home",
+          "path": "${CARGO_HOME}",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://doc.rust-lang.org/cargo/guide/cargo-home.html"
+          ]
+        },
+        {
+          "id": "rustup-home",
+          "path": "~/.rustup",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://rust-lang.github.io/rustup/environment-variables.html"
+          ]
+        },
+        {
+          "id": "custom-rustup-home",
+          "path": "${RUSTUP_HOME}",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://rust-lang.github.io/rustup/environment-variables.html"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "cargo-home",
+          "path": "~/.cargo",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://doc.rust-lang.org/cargo/guide/cargo-home.html"
+          ]
+        },
+        {
+          "id": "custom-cargo-home",
+          "path": "${CARGO_HOME}",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://doc.rust-lang.org/cargo/guide/cargo-home.html"
+          ]
+        },
+        {
+          "id": "rustup-home",
+          "path": "~/.rustup",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://rust-lang.github.io/rustup/environment-variables.html"
+          ]
+        },
+        {
+          "id": "custom-rustup-home",
+          "path": "${RUSTUP_HOME}",
+          "targetType": "directory",
+          "description": "Rust / Cargo / rustup：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://rust-lang.github.io/rustup/environment-variables.html"
+          ]
+        }
+      ]
+    }
+  }
+}

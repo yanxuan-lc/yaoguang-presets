@@ -1,0 +1,170 @@
+{
+  "id": "poetry",
+  "name": "Poetry",
+  "description": "Poetry 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Poetry 2.5"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "配置可含 auth.toml，keyring 访问另行处理。",
+    "POETRY_DATA_DIR/POETRY_HOME 与自定义虚拟环境不由配置根完整涵盖；安装和创建环境写入另行授权。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${POETRY_CONFIG_DIR}",
+          "targetType": "directory",
+          "description": "Poetry：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${POETRY_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "Poetry：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/Library/Application Support/pypoetry",
+          "targetType": "directory",
+          "description": "Poetry：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/Library/Caches/pypoetry",
+          "targetType": "directory",
+          "description": "Poetry：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${POETRY_CONFIG_DIR}",
+          "targetType": "directory",
+          "description": "Poetry：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${POETRY_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "Poetry：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/pypoetry",
+          "targetType": "directory",
+          "description": "Poetry：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/pypoetry",
+          "targetType": "directory",
+          "description": "Poetry：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/.cache/pypoetry",
+          "targetType": "directory",
+          "description": "Poetry：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "xdg-cache",
+          "path": "${XDG_CACHE_HOME}/pypoetry",
+          "targetType": "directory",
+          "description": "Poetry：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${POETRY_CONFIG_DIR}",
+          "targetType": "directory",
+          "description": "Poetry：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${POETRY_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "Poetry：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${APPDATA}/pypoetry",
+          "targetType": "directory",
+          "description": "Poetry：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "${LOCALAPPDATA}/pypoetry",
+          "targetType": "directory",
+          "description": "Poetry：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://python-poetry.org/docs/configuration/"
+          ]
+        }
+      ]
+    }
+  }
+}

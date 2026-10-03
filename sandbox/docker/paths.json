@@ -1,0 +1,90 @@
+{
+  "id": "docker",
+  "name": "Docker / Compose",
+  "description": "Docker / Compose 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Docker CLI current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "配置根可含 auths、context 证书和认证；credential helper 的权限不是目录权限。",
+    "daemon/socket 可操作沙箱外资源；选择此模板不授予连接 daemon、build/run/push/login 或网络许可。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.docker",
+          "targetType": "directory",
+          "description": "Docker / Compose：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.docker.com/reference/cli/docker/"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${DOCKER_CONFIG}",
+          "targetType": "directory",
+          "description": "Docker / Compose：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.docker.com/reference/cli/docker/"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.docker",
+          "targetType": "directory",
+          "description": "Docker / Compose：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.docker.com/reference/cli/docker/"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${DOCKER_CONFIG}",
+          "targetType": "directory",
+          "description": "Docker / Compose：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.docker.com/reference/cli/docker/"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.docker",
+          "targetType": "directory",
+          "description": "Docker / Compose：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.docker.com/reference/cli/docker/"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${DOCKER_CONFIG}",
+          "targetType": "directory",
+          "description": "Docker / Compose：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.docker.com/reference/cli/docker/"
+          ]
+        }
+      ]
+    }
+  }
+}

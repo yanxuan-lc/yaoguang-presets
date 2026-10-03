@@ -1,0 +1,210 @@
+{
+  "id": "aws",
+  "name": "AWS CLI",
+  "description": "AWS CLI 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "AWS CLI 2 current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "config 也可能含凭据；角色、credential_process、认证环境变量、SSO 及服务 endpoint 额外核对。",
+    "认证刷新可能写缓存；读取模板不授予云 API 操作。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.aws/config",
+          "targetType": "file",
+          "description": "AWS CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "credentials",
+          "path": "~/.aws/credentials",
+          "targetType": "file",
+          "description": "AWS CLI：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${AWS_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "AWS CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "custom-credentials",
+          "path": "${AWS_SHARED_CREDENTIALS_FILE}",
+          "targetType": "file",
+          "description": "AWS CLI：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "sso-cache",
+          "path": "~/.aws/sso/cache",
+          "targetType": "directory",
+          "description": "AWS CLI：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "cli-cache",
+          "path": "~/.aws/cli/cache",
+          "targetType": "directory",
+          "description": "AWS CLI：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.aws/config",
+          "targetType": "file",
+          "description": "AWS CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "credentials",
+          "path": "~/.aws/credentials",
+          "targetType": "file",
+          "description": "AWS CLI：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${AWS_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "AWS CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "custom-credentials",
+          "path": "${AWS_SHARED_CREDENTIALS_FILE}",
+          "targetType": "file",
+          "description": "AWS CLI：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "sso-cache",
+          "path": "~/.aws/sso/cache",
+          "targetType": "directory",
+          "description": "AWS CLI：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "cli-cache",
+          "path": "~/.aws/cli/cache",
+          "targetType": "directory",
+          "description": "AWS CLI：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.aws/config",
+          "targetType": "file",
+          "description": "AWS CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "credentials",
+          "path": "~/.aws/credentials",
+          "targetType": "file",
+          "description": "AWS CLI：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${AWS_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "AWS CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "custom-credentials",
+          "path": "${AWS_SHARED_CREDENTIALS_FILE}",
+          "targetType": "file",
+          "description": "AWS CLI：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "sso-cache",
+          "path": "~/.aws/sso/cache",
+          "targetType": "directory",
+          "description": "AWS CLI：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        },
+        {
+          "id": "cli-cache",
+          "path": "~/.aws/cli/cache",
+          "targetType": "directory",
+          "description": "AWS CLI：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html"
+          ]
+        }
+      ]
+    }
+  }
+}

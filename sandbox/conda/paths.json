@@ -1,0 +1,180 @@
+{
+  "id": "conda",
+  "name": "Conda",
+  "description": "Conda 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Conda 26.9.1"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "channels 可含认证 URL；系统/CONDA_ROOT/CONDARC 配置及安装根 pkgs/envs 需手工补，不猜 miniconda/anaconda 位置。",
+    "活动环境可能含私有包与配置；环境创建、缓存和 channel 连接仍需各自权限。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "user-config",
+          "path": "~/.condarc",
+          "targetType": "file",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "config-dir",
+          "path": "~/.config/conda",
+          "targetType": "directory",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/conda",
+          "targetType": "directory",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "legacy-config",
+          "path": "~/.conda",
+          "targetType": "directory",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "active-environment",
+          "path": "${CONDA_PREFIX}",
+          "targetType": "directory",
+          "description": "Conda：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "user-config",
+          "path": "~/.condarc",
+          "targetType": "file",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "config-dir",
+          "path": "~/.config/conda",
+          "targetType": "directory",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/conda",
+          "targetType": "directory",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "legacy-config",
+          "path": "~/.conda",
+          "targetType": "directory",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "active-environment",
+          "path": "${CONDA_PREFIX}",
+          "targetType": "directory",
+          "description": "Conda：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "user-config",
+          "path": "~/.condarc",
+          "targetType": "file",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "config-dir",
+          "path": "~/.config/conda",
+          "targetType": "directory",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/conda",
+          "targetType": "directory",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "legacy-config",
+          "path": "~/.conda",
+          "targetType": "directory",
+          "description": "Conda：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        },
+        {
+          "id": "active-environment",
+          "path": "${CONDA_PREFIX}",
+          "targetType": "directory",
+          "description": "Conda：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html"
+          ]
+        }
+      ]
+    }
+  }
+}

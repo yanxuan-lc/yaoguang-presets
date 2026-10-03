@@ -1,0 +1,330 @@
+{
+  "id": "pnpm",
+  "name": "pnpm",
+  "description": "pnpm 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "pnpm 11.13.1"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "配置根内 auth.ini 和 config.yaml structured _auth 均可含认证；不能按最新网页替代 11.13.1 源码。",
+    "未声明 configDir/rc；storeDir、跨盘 store、userconfig 及 setup 写 shell 配置需另核对。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "user-npmrc",
+          "path": "~/.npmrc",
+          "targetType": "file",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/loadNpmrcFiles.ts"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "custom-home",
+          "path": "${PNPM_HOME}",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "xdg-data",
+          "path": "${XDG_DATA_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "xdg-cache",
+          "path": "${XDG_CACHE_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "xdg-state",
+          "path": "${XDG_STATE_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/Library/Preferences/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "data",
+          "path": "~/Library/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/Library/Caches/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "state",
+          "path": "~/.local/state/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "user-npmrc",
+          "path": "~/.npmrc",
+          "targetType": "file",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/loadNpmrcFiles.ts"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "custom-home",
+          "path": "${PNPM_HOME}",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "xdg-data",
+          "path": "${XDG_DATA_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "xdg-cache",
+          "path": "${XDG_CACHE_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "xdg-state",
+          "path": "${XDG_STATE_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "data",
+          "path": "~/.local/share/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/.cache/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "state",
+          "path": "~/.local/state/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "user-npmrc",
+          "path": "~/.npmrc",
+          "targetType": "file",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/loadNpmrcFiles.ts"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "custom-home",
+          "path": "${PNPM_HOME}",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "xdg-data",
+          "path": "${XDG_DATA_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "xdg-cache",
+          "path": "${XDG_CACHE_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "xdg-state",
+          "path": "${XDG_STATE_HOME}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${LOCALAPPDATA}/pnpm/config",
+          "targetType": "directory",
+          "description": "pnpm：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "data",
+          "path": "${LOCALAPPDATA}/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "${LOCALAPPDATA}/pnpm-cache",
+          "targetType": "directory",
+          "description": "pnpm：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "state",
+          "path": "${LOCALAPPDATA}/pnpm-state",
+          "targetType": "directory",
+          "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        }
+      ]
+    }
+  }
+}

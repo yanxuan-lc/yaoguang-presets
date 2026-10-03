@@ -1,0 +1,150 @@
+{
+  "id": "bun",
+  "name": "Bun",
+  "description": "Bun 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Bun current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "bunfig/npmrc 可含 registry 凭据；BUN_INSTALL、cache/globalDir/bin 等覆盖需手工补实际路径。",
+    "run 与包管理全局配置加载不同；自动安装、下载及锁文件写入另行核对。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "install",
+          "path": "~/.bun",
+          "targetType": "directory",
+          "description": "Bun：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/pm/global-cache"
+          ]
+        },
+        {
+          "id": "user-config",
+          "path": "~/.bunfig.toml",
+          "targetType": "file",
+          "description": "Bun：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/runtime/bunfig"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/.bunfig.toml",
+          "targetType": "file",
+          "description": "Bun：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/runtime/bunfig"
+          ]
+        },
+        {
+          "id": "npmrc",
+          "path": "~/.npmrc",
+          "targetType": "file",
+          "description": "Bun：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/pm/npmrc"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "install",
+          "path": "~/.bun",
+          "targetType": "directory",
+          "description": "Bun：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/pm/global-cache"
+          ]
+        },
+        {
+          "id": "user-config",
+          "path": "~/.bunfig.toml",
+          "targetType": "file",
+          "description": "Bun：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/runtime/bunfig"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/.bunfig.toml",
+          "targetType": "file",
+          "description": "Bun：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/runtime/bunfig"
+          ]
+        },
+        {
+          "id": "npmrc",
+          "path": "~/.npmrc",
+          "targetType": "file",
+          "description": "Bun：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/pm/npmrc"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "install",
+          "path": "~/.bun",
+          "targetType": "directory",
+          "description": "Bun：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/pm/global-cache"
+          ]
+        },
+        {
+          "id": "user-config",
+          "path": "~/.bunfig.toml",
+          "targetType": "file",
+          "description": "Bun：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/runtime/bunfig"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/.bunfig.toml",
+          "targetType": "file",
+          "description": "Bun：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/runtime/bunfig"
+          ]
+        },
+        {
+          "id": "npmrc",
+          "path": "~/.npmrc",
+          "targetType": "file",
+          "description": "Bun：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://bun.com/docs/pm/npmrc"
+          ]
+        }
+      ]
+    }
+  }
+}

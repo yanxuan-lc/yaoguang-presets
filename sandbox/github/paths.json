@@ -1,0 +1,110 @@
+{
+  "id": "github",
+  "name": "GitHub CLI",
+  "description": "GitHub CLI 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "GitHub CLI current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "hosts.yml 可包含 token；keychain/系统 credential store 及 token 环境变量不是目录可读权限。",
+    "clone/checkout 另需 Git；GitHub Packages 与 ghcr 的客户端认证分别处理。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${GH_CONFIG_DIR}",
+          "targetType": "directory",
+          "description": "GitHub CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cli.github.com/manual/gh_help_environment"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/gh",
+          "targetType": "directory",
+          "description": "GitHub CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cli.github.com/manual/gh_help_environment"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/gh",
+          "targetType": "directory",
+          "description": "GitHub CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cli.github.com/manual/gh_help_environment"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${GH_CONFIG_DIR}",
+          "targetType": "directory",
+          "description": "GitHub CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cli.github.com/manual/gh_help_environment"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/gh",
+          "targetType": "directory",
+          "description": "GitHub CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cli.github.com/manual/gh_help_environment"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/gh",
+          "targetType": "directory",
+          "description": "GitHub CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cli.github.com/manual/gh_help_environment"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${GH_CONFIG_DIR}",
+          "targetType": "directory",
+          "description": "GitHub CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cli.github.com/manual/gh_help_environment"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${APPDATA}/GitHub CLI",
+          "targetType": "directory",
+          "description": "GitHub CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cli.github.com/manual/gh_help_environment"
+          ]
+        }
+      ]
+    }
+  }
+}

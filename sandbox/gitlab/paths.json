@@ -1,0 +1,120 @@
+{
+  "id": "gitlab",
+  "name": "GitLab CLI",
+  "description": "GitLab CLI 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "GitLab CLI current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "当前默认 keyring，无 keyring 或 insecure-storage 时配置可含明文凭据。",
+    "未声明未核定的缓存目录；Git、认证 helper、API 及登录写入单独处理。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "legacy-config",
+          "path": "~/.config/glab-cli/config.yml",
+          "targetType": "file",
+          "description": "GitLab CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gitlab.com/cli/configuration/"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${GLAB_CONFIG_DIR}/config.yml",
+          "targetType": "file",
+          "description": "GitLab CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gitlab.com/cli/configuration/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/Library/Application Support/glab-cli/config.yml",
+          "targetType": "file",
+          "description": "GitLab CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gitlab.com/cli/configuration/"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "legacy-config",
+          "path": "~/.config/glab-cli/config.yml",
+          "targetType": "file",
+          "description": "GitLab CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gitlab.com/cli/configuration/"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${GLAB_CONFIG_DIR}/config.yml",
+          "targetType": "file",
+          "description": "GitLab CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gitlab.com/cli/configuration/"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/glab-cli/config.yml",
+          "targetType": "file",
+          "description": "GitLab CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gitlab.com/cli/configuration/"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "legacy-config",
+          "path": "~/.config/glab-cli/config.yml",
+          "targetType": "file",
+          "description": "GitLab CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gitlab.com/cli/configuration/"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${GLAB_CONFIG_DIR}/config.yml",
+          "targetType": "file",
+          "description": "GitLab CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gitlab.com/cli/configuration/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${LOCALAPPDATA}/glab-cli/config.yml",
+          "targetType": "file",
+          "description": "GitLab CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gitlab.com/cli/configuration/"
+          ]
+        }
+      ]
+    }
+  }
+}

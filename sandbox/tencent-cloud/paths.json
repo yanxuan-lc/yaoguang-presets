@@ -1,0 +1,60 @@
+{
+  "id": "tencent-cloud",
+  "name": "腾讯云 CLI",
+  "description": "腾讯云 CLI 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "TCCLI current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "目录包含所有 profile 的 configure/credential 文件，递归范围可能包含多个账号。",
+    "认证环境变量、region/endpoint、配置写入与云 API 操作不是读取模板授权。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.tccli",
+          "targetType": "directory",
+          "description": "腾讯云 CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cloud.tencent.com/document/product/440/34012"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.tccli",
+          "targetType": "directory",
+          "description": "腾讯云 CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cloud.tencent.com/document/product/440/34012"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.tccli",
+          "targetType": "directory",
+          "description": "腾讯云 CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://cloud.tencent.com/document/product/440/34012"
+          ]
+        }
+      ]
+    }
+  }
+}

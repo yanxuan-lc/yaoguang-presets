@@ -1,0 +1,132 @@
+{
+  "id": "flutter",
+  "name": "Dart / Flutter",
+  "description": "Dart / Flutter 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Dart current",
+      "Flutter current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "Flutter SDK 是自选安装路径，不将官方示例当唯一默认；手工补真实 SDK。",
+    "pub cache 可含私有包与旧认证残留；当前 Dart 认证另在用户配置根。",
+    "Flutter 会写 SDK/bin/cache/lockfile；Android/iOS 继承工具链和服务需求。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "custom-pub-cache",
+          "path": "${PUB_CACHE}",
+          "targetType": "directory",
+          "description": "Dart / Flutter：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://dart.dev/tools/pub/environment-variables"
+          ]
+        },
+        {
+          "id": "pub-cache",
+          "path": "~/.pub-cache",
+          "targetType": "directory",
+          "description": "Dart / Flutter：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://dart.dev/tools/pub/environment-variables"
+          ]
+        },
+        {
+          "id": "dart-config",
+          "path": "~/Library/Application Support/dart",
+          "targetType": "directory",
+          "description": "Dart / Flutter：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/dart-lang/pub/blob/master/doc/cache_layout.md"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "custom-pub-cache",
+          "path": "${PUB_CACHE}",
+          "targetType": "directory",
+          "description": "Dart / Flutter：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://dart.dev/tools/pub/environment-variables"
+          ]
+        },
+        {
+          "id": "pub-cache",
+          "path": "~/.pub-cache",
+          "targetType": "directory",
+          "description": "Dart / Flutter：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://dart.dev/tools/pub/environment-variables"
+          ]
+        },
+        {
+          "id": "dart-config",
+          "path": "~/.config/dart",
+          "targetType": "directory",
+          "description": "Dart / Flutter：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/dart-lang/pub/blob/master/doc/cache_layout.md"
+          ]
+        },
+        {
+          "id": "xdg-dart-config",
+          "path": "${XDG_CONFIG_HOME}/dart",
+          "targetType": "directory",
+          "description": "Dart / Flutter：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/dart-lang/pub/blob/master/doc/cache_layout.md"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "custom-pub-cache",
+          "path": "${PUB_CACHE}",
+          "targetType": "directory",
+          "description": "Dart / Flutter：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://dart.dev/tools/pub/environment-variables"
+          ]
+        },
+        {
+          "id": "pub-cache",
+          "path": "${LOCALAPPDATA}/Pub/Cache",
+          "targetType": "directory",
+          "description": "Dart / Flutter：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://dart.dev/tools/pub/environment-variables"
+          ]
+        },
+        {
+          "id": "dart-config",
+          "path": "${APPDATA}/dart",
+          "targetType": "directory",
+          "description": "Dart / Flutter：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/dart-lang/pub/blob/master/doc/cache_layout.md"
+          ]
+        }
+      ]
+    }
+  }
+}

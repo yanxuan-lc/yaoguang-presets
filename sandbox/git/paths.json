@@ -1,0 +1,210 @@
+{
+  "id": "git",
+  "name": "Git",
+  "description": "Git 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Git current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "include/includeIf、GIT_CONFIG_GLOBAL/SYSTEM、系统前缀及签名/helper 的额外文件需手工补充；不读取正文追踪 include。",
+    "credential-store 文件包含明文凭据；helper、keychain、远程连接与仓库写入仍需其他权限。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "global-config",
+          "path": "~/.gitconfig",
+          "targetType": "file",
+          "description": "Git：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-config"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "~/.config/git/config",
+          "targetType": "file",
+          "description": "Git：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-config"
+          ]
+        },
+        {
+          "id": "custom-xdg-config",
+          "path": "${XDG_CONFIG_HOME}/git/config",
+          "targetType": "file",
+          "description": "Git：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-config"
+          ]
+        },
+        {
+          "id": "credentials",
+          "path": "~/.git-credentials",
+          "targetType": "file",
+          "description": "Git：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-credential-store"
+          ]
+        },
+        {
+          "id": "xdg-credentials",
+          "path": "~/.config/git/credentials",
+          "targetType": "file",
+          "description": "Git：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-credential-store"
+          ]
+        },
+        {
+          "id": "custom-xdg-credentials",
+          "path": "${XDG_CONFIG_HOME}/git/credentials",
+          "targetType": "file",
+          "description": "Git：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-credential-store"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "global-config",
+          "path": "~/.gitconfig",
+          "targetType": "file",
+          "description": "Git：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-config"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "~/.config/git/config",
+          "targetType": "file",
+          "description": "Git：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-config"
+          ]
+        },
+        {
+          "id": "custom-xdg-config",
+          "path": "${XDG_CONFIG_HOME}/git/config",
+          "targetType": "file",
+          "description": "Git：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-config"
+          ]
+        },
+        {
+          "id": "credentials",
+          "path": "~/.git-credentials",
+          "targetType": "file",
+          "description": "Git：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-credential-store"
+          ]
+        },
+        {
+          "id": "xdg-credentials",
+          "path": "~/.config/git/credentials",
+          "targetType": "file",
+          "description": "Git：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-credential-store"
+          ]
+        },
+        {
+          "id": "custom-xdg-credentials",
+          "path": "${XDG_CONFIG_HOME}/git/credentials",
+          "targetType": "file",
+          "description": "Git：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-credential-store"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "global-config",
+          "path": "~/.gitconfig",
+          "targetType": "file",
+          "description": "Git：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-config"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "~/.config/git/config",
+          "targetType": "file",
+          "description": "Git：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-config"
+          ]
+        },
+        {
+          "id": "custom-xdg-config",
+          "path": "${XDG_CONFIG_HOME}/git/config",
+          "targetType": "file",
+          "description": "Git：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-config"
+          ]
+        },
+        {
+          "id": "credentials",
+          "path": "~/.git-credentials",
+          "targetType": "file",
+          "description": "Git：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-credential-store"
+          ]
+        },
+        {
+          "id": "xdg-credentials",
+          "path": "~/.config/git/credentials",
+          "targetType": "file",
+          "description": "Git：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-credential-store"
+          ]
+        },
+        {
+          "id": "custom-xdg-credentials",
+          "path": "${XDG_CONFIG_HOME}/git/credentials",
+          "targetType": "file",
+          "description": "Git：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://git-scm.com/docs/git-credential-store"
+          ]
+        }
+      ]
+    }
+  }
+}

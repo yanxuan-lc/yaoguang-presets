@@ -1,0 +1,60 @@
+{
+  "id": "ssh",
+  "name": "OpenSSH",
+  "description": "OpenSSH 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "OpenSSH current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "整个 .ssh 是宽读取候选，递归包含所有私钥、配置与 known_hosts；应用前核对授权范围。",
+    "Include、IdentityFile、-F 和自定义 known_hosts 文件需手工补充；agent/socket、硬件/系统密钥链、连接和写入另行处理。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "user-home",
+          "path": "~/.ssh",
+          "targetType": "directory",
+          "description": "OpenSSH：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://man.openbsd.org/ssh_config"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "user-home",
+          "path": "~/.ssh",
+          "targetType": "directory",
+          "description": "OpenSSH：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://man.openbsd.org/ssh_config"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "user-home",
+          "path": "~/.ssh",
+          "targetType": "directory",
+          "description": "OpenSSH：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://man.openbsd.org/ssh_config"
+          ]
+        }
+      ]
+    }
+  }
+}

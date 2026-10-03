@@ -1,0 +1,161 @@
+{
+  "id": "node",
+  "name": "Node.js 与版本管理器",
+  "description": "Node.js 与版本管理器 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Node.js current",
+      "nvm/Volta/fnm current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "安装根包含可执行程序和附属用户配置，不保证无敏感数据。",
+    "平台 fnm 默认目录未猜测；NODE_PATH、额外 CA、应用资源、包管理认证及非标准安装路径需手工核对。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "volta",
+          "path": "~/.volta",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.volta.sh/advanced/installers"
+          ]
+        },
+        {
+          "id": "custom-volta",
+          "path": "${VOLTA_HOME}",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.volta.sh/reference/environment"
+          ]
+        },
+        {
+          "id": "custom-fnm",
+          "path": "${FNM_DIR}",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/Schniz/fnm"
+          ]
+        },
+        {
+          "id": "nvm",
+          "path": "~/.nvm",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/nvm-sh/nvm"
+          ]
+        },
+        {
+          "id": "custom-nvm",
+          "path": "${NVM_DIR}",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/nvm-sh/nvm"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "volta",
+          "path": "~/.volta",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.volta.sh/advanced/installers"
+          ]
+        },
+        {
+          "id": "custom-volta",
+          "path": "${VOLTA_HOME}",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.volta.sh/reference/environment"
+          ]
+        },
+        {
+          "id": "custom-fnm",
+          "path": "${FNM_DIR}",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/Schniz/fnm"
+          ]
+        },
+        {
+          "id": "nvm",
+          "path": "~/.nvm",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/nvm-sh/nvm"
+          ]
+        },
+        {
+          "id": "custom-nvm",
+          "path": "${NVM_DIR}",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/nvm-sh/nvm"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "volta",
+          "path": "${LOCALAPPDATA}/Volta",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.volta.sh/advanced/installers"
+          ]
+        },
+        {
+          "id": "custom-volta",
+          "path": "${VOLTA_HOME}",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.volta.sh/reference/environment"
+          ]
+        },
+        {
+          "id": "custom-fnm",
+          "path": "${FNM_DIR}",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/Schniz/fnm"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "apple",
+  "name": "Apple / Xcode / CocoaPods",
+  "description": "Apple / Xcode / CocoaPods 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Xcode current",
+      "CocoaPods current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "标准位置不是唯一路径；selected developer directory、重命名 Xcode 与 CP_HOME_DIR 需手工补。",
+    "xcrun 临时写、签名/keychain、设备/模拟器、pod install 的写入/网络另行处理。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "xcode",
+          "path": "/Applications/Xcode.app",
+          "targetType": "directory",
+          "description": "Apple / Xcode / CocoaPods：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://developer.apple.com/library/archive/technotes/tn2339/_index.html"
+          ]
+        },
+        {
+          "id": "command-line-tools",
+          "path": "/Library/Developer/CommandLineTools",
+          "targetType": "directory",
+          "description": "Apple / Xcode / CocoaPods：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://developer.apple.com/library/archive/technotes/tn2339/_index.html"
+          ]
+        },
+        {
+          "id": "pods-repositories",
+          "path": "~/.cocoapods",
+          "targetType": "directory",
+          "description": "Apple / Xcode / CocoaPods：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.cocoapods.org/terminal/commands.html"
+          ]
+        },
+        {
+          "id": "pods-cache",
+          "path": "~/Library/Caches/CocoaPods",
+          "targetType": "directory",
+          "description": "Apple / Xcode / CocoaPods：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.cocoapods.org/using/faq.html"
+          ]
+        }
+      ]
+    }
+  }
+}

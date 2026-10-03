@@ -1,0 +1,111 @@
+{
+  "id": "terraform",
+  "name": "Terraform",
+  "description": "Terraform 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Terraform current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "CLI config 可含 credentials/helper；plugin_cache_dir 是显式配置，不声明一个默认开启的缓存。",
+    "自定义 helper、项目 .terraform/state/锁、provider 下载和 backend 修改单独处理。",
+    "Windows login 文件位置以命令提示核对后手工补充；不套用 Unix .terraform.d。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${TF_CLI_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "Terraform：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.hashicorp.com/terraform/cli/config/config-file"
+          ]
+        },
+        {
+          "id": "credentials",
+          "path": "~/.terraform.d/credentials.tfrc.json",
+          "targetType": "file",
+          "description": "Terraform：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.hashicorp.com/terraform/cli/config/config-file"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.terraformrc",
+          "targetType": "file",
+          "description": "Terraform：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.hashicorp.com/terraform/cli/config/config-file"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${TF_CLI_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "Terraform：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.hashicorp.com/terraform/cli/config/config-file"
+          ]
+        },
+        {
+          "id": "credentials",
+          "path": "~/.terraform.d/credentials.tfrc.json",
+          "targetType": "file",
+          "description": "Terraform：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.hashicorp.com/terraform/cli/config/config-file"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.terraformrc",
+          "targetType": "file",
+          "description": "Terraform：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.hashicorp.com/terraform/cli/config/config-file"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${TF_CLI_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "Terraform：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.hashicorp.com/terraform/cli/config/config-file"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${APPDATA}/terraform.rc",
+          "targetType": "file",
+          "description": "Terraform：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.hashicorp.com/terraform/cli/config/config-file"
+          ]
+        }
+      ]
+    }
+  }
+}

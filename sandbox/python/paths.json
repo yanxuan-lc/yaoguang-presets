@@ -1,0 +1,251 @@
+{
+  "id": "python",
+  "name": "Python / pip / pyenv",
+  "description": "Python / pip / pyenv 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "pip stable",
+      "pyenv current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "pip 配置可含 index 认证 URL；netrc/keyring、site 配置、解释器/venv 根需另外配置。",
+    "pyenv 不等于 pyenv-win；安装、wheel 构建/缓存和环境写入不是读取模板授权。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${PIP_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${PIP_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "Python / pip / pyenv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/caching/"
+          ]
+        },
+        {
+          "id": "legacy-config",
+          "path": "~/.pip/pip.conf",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/pip/pip.conf",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/pip/pip.conf",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "pyenv",
+          "path": "~/.pyenv",
+          "targetType": "directory",
+          "description": "Python / pip / pyenv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pyenv/pyenv"
+          ]
+        },
+        {
+          "id": "custom-pyenv",
+          "path": "${PYENV_ROOT}",
+          "targetType": "directory",
+          "description": "Python / pip / pyenv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pyenv/pyenv"
+          ]
+        },
+        {
+          "id": "mac-config",
+          "path": "~/Library/Application Support/pip/pip.conf",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/Library/Caches/pip",
+          "targetType": "directory",
+          "description": "Python / pip / pyenv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/caching/"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${PIP_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${PIP_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "Python / pip / pyenv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/caching/"
+          ]
+        },
+        {
+          "id": "legacy-config",
+          "path": "~/.pip/pip.conf",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/pip/pip.conf",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/pip/pip.conf",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "pyenv",
+          "path": "~/.pyenv",
+          "targetType": "directory",
+          "description": "Python / pip / pyenv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pyenv/pyenv"
+          ]
+        },
+        {
+          "id": "custom-pyenv",
+          "path": "${PYENV_ROOT}",
+          "targetType": "directory",
+          "description": "Python / pip / pyenv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pyenv/pyenv"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/.cache/pip",
+          "targetType": "directory",
+          "description": "Python / pip / pyenv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/caching/"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${PIP_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${PIP_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "Python / pip / pyenv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/caching/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${APPDATA}/pip/pip.ini",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "legacy-config",
+          "path": "~/pip/pip.ini",
+          "targetType": "file",
+          "description": "Python / pip / pyenv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/configuration/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "${LOCALAPPDATA}/pip/Cache",
+          "targetType": "directory",
+          "description": "Python / pip / pyenv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pip.pypa.io/en/stable/topics/caching/"
+          ]
+        }
+      ]
+    }
+  }
+}

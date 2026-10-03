@@ -1,0 +1,181 @@
+{
+  "id": "ruby",
+  "name": "Ruby / RubyGems / Bundler",
+  "description": "Ruby / RubyGems / Bundler 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "RubyGems current",
+      "Bundler 4"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    ".gem 可含 credentials 与签名私钥，Bundler config 可含 source 认证。",
+    "GEM_PATH 列表、XDG RubyGems 和 BUNDLE_* 位置需手工核对；native extension、项目 lockfile、安装和发布独立授权。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "gemrc",
+          "path": "~/.gemrc",
+          "targetType": "file",
+          "description": "Ruby / RubyGems / Bundler：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/configuration/"
+          ]
+        },
+        {
+          "id": "gem-home",
+          "path": "~/.gem",
+          "targetType": "directory",
+          "description": "Ruby / RubyGems / Bundler：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/configuration/"
+          ]
+        },
+        {
+          "id": "custom-gem-home",
+          "path": "${GEM_HOME}",
+          "targetType": "directory",
+          "description": "Ruby / RubyGems / Bundler：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/environment-variables/"
+          ]
+        },
+        {
+          "id": "bundler-config",
+          "path": "~/.bundle/config",
+          "targetType": "file",
+          "description": "Ruby / RubyGems / Bundler：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/command-reference/bundle-config/"
+          ]
+        },
+        {
+          "id": "bundler-cache",
+          "path": "~/.bundle/cache",
+          "targetType": "directory",
+          "description": "Ruby / RubyGems / Bundler：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/command-reference/bundle-config/"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "gemrc",
+          "path": "~/.gemrc",
+          "targetType": "file",
+          "description": "Ruby / RubyGems / Bundler：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/configuration/"
+          ]
+        },
+        {
+          "id": "gem-home",
+          "path": "~/.gem",
+          "targetType": "directory",
+          "description": "Ruby / RubyGems / Bundler：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/configuration/"
+          ]
+        },
+        {
+          "id": "custom-gem-home",
+          "path": "${GEM_HOME}",
+          "targetType": "directory",
+          "description": "Ruby / RubyGems / Bundler：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/environment-variables/"
+          ]
+        },
+        {
+          "id": "bundler-config",
+          "path": "~/.bundle/config",
+          "targetType": "file",
+          "description": "Ruby / RubyGems / Bundler：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/command-reference/bundle-config/"
+          ]
+        },
+        {
+          "id": "bundler-cache",
+          "path": "~/.bundle/cache",
+          "targetType": "directory",
+          "description": "Ruby / RubyGems / Bundler：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/command-reference/bundle-config/"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "gemrc",
+          "path": "~/.gemrc",
+          "targetType": "file",
+          "description": "Ruby / RubyGems / Bundler：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/configuration/"
+          ]
+        },
+        {
+          "id": "gem-home",
+          "path": "~/.gem",
+          "targetType": "directory",
+          "description": "Ruby / RubyGems / Bundler：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/configuration/"
+          ]
+        },
+        {
+          "id": "custom-gem-home",
+          "path": "${GEM_HOME}",
+          "targetType": "directory",
+          "description": "Ruby / RubyGems / Bundler：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/environment-variables/"
+          ]
+        },
+        {
+          "id": "bundler-config",
+          "path": "~/.bundle/config",
+          "targetType": "file",
+          "description": "Ruby / RubyGems / Bundler：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/command-reference/bundle-config/"
+          ]
+        },
+        {
+          "id": "bundler-cache",
+          "path": "~/.bundle/cache",
+          "targetType": "directory",
+          "description": "Ruby / RubyGems / Bundler：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://guides.rubygems.org/command-reference/bundle-config/"
+          ]
+        }
+      ]
+    }
+  }
+}

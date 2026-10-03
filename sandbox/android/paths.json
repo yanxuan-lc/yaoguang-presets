@@ -1,0 +1,120 @@
+{
+  "id": "android",
+  "name": "Android SDK",
+  "description": "Android SDK 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Android SDK tools current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "用户根可含 adb 身份、AVD 和配置；ANDROID_AVD_HOME/EMULATOR_HOME、旧 SDK_HOME 和非标准 SDK 需手工补。",
+    "还需 Java/Gradle；设备、adb、模拟器、SDK 下载和镜像/状态写入单独处理。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "sdk",
+          "path": "${ANDROID_HOME}",
+          "targetType": "directory",
+          "description": "Android SDK：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.android.com/tools/variables"
+          ]
+        },
+        {
+          "id": "user-home",
+          "path": "~/.android",
+          "targetType": "directory",
+          "description": "Android SDK：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.android.com/tools/variables"
+          ]
+        },
+        {
+          "id": "custom-user-home",
+          "path": "${ANDROID_USER_HOME}",
+          "targetType": "directory",
+          "description": "Android SDK：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.android.com/tools/variables"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "sdk",
+          "path": "${ANDROID_HOME}",
+          "targetType": "directory",
+          "description": "Android SDK：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.android.com/tools/variables"
+          ]
+        },
+        {
+          "id": "user-home",
+          "path": "~/.android",
+          "targetType": "directory",
+          "description": "Android SDK：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.android.com/tools/variables"
+          ]
+        },
+        {
+          "id": "custom-user-home",
+          "path": "${ANDROID_USER_HOME}",
+          "targetType": "directory",
+          "description": "Android SDK：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.android.com/tools/variables"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "sdk",
+          "path": "${ANDROID_HOME}",
+          "targetType": "directory",
+          "description": "Android SDK：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.android.com/tools/variables"
+          ]
+        },
+        {
+          "id": "user-home",
+          "path": "~/.android",
+          "targetType": "directory",
+          "description": "Android SDK：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.android.com/tools/variables"
+          ]
+        },
+        {
+          "id": "custom-user-home",
+          "path": "${ANDROID_USER_HOME}",
+          "targetType": "directory",
+          "description": "Android SDK：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.android.com/tools/variables"
+          ]
+        }
+      ]
+    }
+  }
+}

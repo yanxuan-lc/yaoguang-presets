@@ -1,0 +1,90 @@
+{
+  "id": "npm",
+  "name": "npm",
+  "description": "npm 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "npm 12"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "npmrc 可含 token、密码及证书位置；userconfig/globalconfig/prefix/cache 可覆盖，当前定位语法不自动探测。",
+    "npmjs、GitHub Packages 和企业 registry 按实际 scope 配置；install/login/publish 与日志写入、网络独立授权。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "user-config",
+          "path": "~/.npmrc",
+          "targetType": "file",
+          "description": "npm：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.npmjs.com/cli/v12/configuring-npm/npmrc/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/.npm",
+          "targetType": "directory",
+          "description": "npm：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.npmjs.com/cli/v12/using-npm/config/"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "user-config",
+          "path": "~/.npmrc",
+          "targetType": "file",
+          "description": "npm：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.npmjs.com/cli/v12/configuring-npm/npmrc/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/.npm",
+          "targetType": "directory",
+          "description": "npm：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.npmjs.com/cli/v12/using-npm/config/"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "user-config",
+          "path": "~/.npmrc",
+          "targetType": "file",
+          "description": "npm：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.npmjs.com/cli/v12/configuring-npm/npmrc/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "${LOCALAPPDATA}/npm-cache",
+          "targetType": "directory",
+          "description": "npm：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.npmjs.com/cli/v12/using-npm/config/"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "id": "composer",
+  "name": "PHP / Composer",
+  "description": "PHP / Composer 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Composer current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "home 可含 auth.json/config.json 和全局工具；不猜 PHP/Composer 程序安装根。",
+    "cache-read-only 不消除 vendor/autoload 写入，旧缓存迁移亦可能写目录；项目认证和 COMPOSER_AUTH 另外处理。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "custom-home",
+          "path": "${COMPOSER_HOME}",
+          "targetType": "directory",
+          "description": "PHP / Composer：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${COMPOSER_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "PHP / Composer：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.composer",
+          "targetType": "directory",
+          "description": "PHP / Composer：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/Library/Caches/composer",
+          "targetType": "directory",
+          "description": "PHP / Composer：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/composer/composer/blob/main/src/Composer/Factory.php"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "custom-home",
+          "path": "${COMPOSER_HOME}",
+          "targetType": "directory",
+          "description": "PHP / Composer：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${COMPOSER_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "PHP / Composer：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "legacy-config",
+          "path": "~/.composer",
+          "targetType": "directory",
+          "description": "PHP / Composer：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/composer",
+          "targetType": "directory",
+          "description": "PHP / Composer：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/composer",
+          "targetType": "directory",
+          "description": "PHP / Composer：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/.cache/composer",
+          "targetType": "directory",
+          "description": "PHP / Composer：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/composer/composer/blob/main/src/Composer/Factory.php"
+          ]
+        },
+        {
+          "id": "xdg-cache",
+          "path": "${XDG_CACHE_HOME}/composer",
+          "targetType": "directory",
+          "description": "PHP / Composer：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "custom-home",
+          "path": "${COMPOSER_HOME}",
+          "targetType": "directory",
+          "description": "PHP / Composer：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${COMPOSER_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "PHP / Composer：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${APPDATA}/Composer",
+          "targetType": "directory",
+          "description": "PHP / Composer：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://getcomposer.org/doc/06-config.md"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "${LOCALAPPDATA}/Composer",
+          "targetType": "directory",
+          "description": "PHP / Composer：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/composer/composer/blob/main/src/Composer/Factory.php"
+          ]
+        }
+      ]
+    }
+  }
+}

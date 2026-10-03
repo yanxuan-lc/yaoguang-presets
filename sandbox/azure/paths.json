@@ -1,0 +1,90 @@
+{
+  "id": "azure",
+  "name": "Azure CLI",
+  "description": "Azure CLI 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Azure CLI current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "现代 MSAL cache 的平台加密不同，不依赖旧 accessTokens.json 假设。",
+    "认证刷新、日志、登录与云 API 操作需要各自写/网络及业务许可。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.azure",
+          "targetType": "directory",
+          "description": "Azure CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/cli/azure/msal-based-azure-cli"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${AZURE_CONFIG_DIR}",
+          "targetType": "directory",
+          "description": "Azure CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/cli/azure/azure-cli-configuration"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.azure",
+          "targetType": "directory",
+          "description": "Azure CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/cli/azure/msal-based-azure-cli"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${AZURE_CONFIG_DIR}",
+          "targetType": "directory",
+          "description": "Azure CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/cli/azure/azure-cli-configuration"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.azure",
+          "targetType": "directory",
+          "description": "Azure CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/cli/azure/msal-based-azure-cli"
+          ]
+        },
+        {
+          "id": "custom-config",
+          "path": "${AZURE_CONFIG_DIR}",
+          "targetType": "directory",
+          "description": "Azure CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/cli/azure/azure-cli-configuration"
+          ]
+        }
+      ]
+    }
+  }
+}

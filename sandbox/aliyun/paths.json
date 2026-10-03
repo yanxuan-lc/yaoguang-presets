@@ -1,0 +1,60 @@
+{
+  "id": "aliyun",
+  "name": "阿里云 CLI",
+  "description": "阿里云 CLI 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Alibaba Cloud CLI current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "profile 可含 AK/STS/OAuth 凭据；自定义配置与 credential process/URI 依赖手工补。",
+    "OAuth 刷新、配置更新、endpoint 连接和云 API 操作另行授权。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.aliyun/config.json",
+          "targetType": "file",
+          "description": "阿里云 CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/aliyun/aliyun-cli/blob/master/docs/en/configuration.md"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.aliyun/config.json",
+          "targetType": "file",
+          "description": "阿里云 CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/aliyun/aliyun-cli/blob/master/docs/en/configuration.md"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.aliyun/config.json",
+          "targetType": "file",
+          "description": "阿里云 CLI：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/aliyun/aliyun-cli/blob/master/docs/en/configuration.md"
+          ]
+        }
+      ]
+    }
+  }
+}

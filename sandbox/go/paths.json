@@ -1,0 +1,220 @@
+{
+  "id": "go",
+  "name": "Go",
+  "description": "Go 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Go current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "GOPATH 列表不拆分；GOMODCACHE/GOENV/GOBIN、非标准工具安装需要手工补。",
+    "GOENV 可含认证 proxy URL；GOAUTH/netrc/helper、module 锁与下载/构建写入分别处理。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "module-cache",
+          "path": "~/go/pkg/mod",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "gopath-module-cache",
+          "path": "${GOPATH}/pkg/mod",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "toolchain",
+          "path": "${GOROOT}",
+          "targetType": "directory",
+          "description": "Go：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "custom-build-cache",
+          "path": "${GOCACHE}",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/Library/Application Support/go/env",
+          "targetType": "file",
+          "description": "Go：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "build-cache",
+          "path": "~/Library/Caches/go-build",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "module-cache",
+          "path": "~/go/pkg/mod",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "gopath-module-cache",
+          "path": "${GOPATH}/pkg/mod",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "toolchain",
+          "path": "${GOROOT}",
+          "targetType": "directory",
+          "description": "Go：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "custom-build-cache",
+          "path": "${GOCACHE}",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/go/env",
+          "targetType": "file",
+          "description": "Go：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/go/env",
+          "targetType": "file",
+          "description": "Go：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "build-cache",
+          "path": "~/.cache/go-build",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "module-cache",
+          "path": "~/go/pkg/mod",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "gopath-module-cache",
+          "path": "${GOPATH}/pkg/mod",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "toolchain",
+          "path": "${GOROOT}",
+          "targetType": "directory",
+          "description": "Go：已安装程序与工具链读取。",
+          "containsCredentials": false,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "custom-build-cache",
+          "path": "${GOCACHE}",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${APPDATA}/go/env",
+          "targetType": "file",
+          "description": "Go：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        },
+        {
+          "id": "build-cache",
+          "path": "${LOCALAPPDATA}/go-build",
+          "targetType": "directory",
+          "description": "Go：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://pkg.go.dev/cmd/go"
+          ]
+        }
+      ]
+    }
+  }
+}

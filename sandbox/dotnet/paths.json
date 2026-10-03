@@ -1,0 +1,261 @@
+{
+  "id": "dotnet",
+  "name": ".NET / NuGet",
+  "description": ".NET / NuGet 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      ".NET current",
+      "NuGet current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "NuGet.Config 可含私有 feed 凭据；系统 SDK、DOTNET_CLI_HOME、HTTP/plugin cache 环境覆盖和 scratch 锁目录需手工补。",
+    "build/test 常隐含 restore；首次运行、锁、workloads 下载和 packages 写入独立处理。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "packages",
+          "path": "~/.nuget/packages",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "custom-packages",
+          "path": "${NUGET_PACKAGES}",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "custom-sdk",
+          "path": "${DOTNET_ROOT}",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-environment-variables"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.nuget/NuGet/NuGet.Config",
+          "targetType": "file",
+          "description": ".NET / NuGet：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/reference/nuget-config-file"
+          ]
+        },
+        {
+          "id": "mono-config",
+          "path": "~/.config/NuGet",
+          "targetType": "directory",
+          "description": ".NET / NuGet：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior"
+          ]
+        },
+        {
+          "id": "http-cache",
+          "path": "~/.local/share/NuGet/v3-cache",
+          "targetType": "directory",
+          "description": ".NET / NuGet：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "plugin-cache",
+          "path": "~/.local/share/NuGet/plugins-cache",
+          "targetType": "directory",
+          "description": ".NET / NuGet：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "script-sdk",
+          "path": "~/.dotnet",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "packages",
+          "path": "~/.nuget/packages",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "custom-packages",
+          "path": "${NUGET_PACKAGES}",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "custom-sdk",
+          "path": "${DOTNET_ROOT}",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-environment-variables"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.nuget/NuGet/NuGet.Config",
+          "targetType": "file",
+          "description": ".NET / NuGet：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/reference/nuget-config-file"
+          ]
+        },
+        {
+          "id": "mono-config",
+          "path": "~/.config/NuGet",
+          "targetType": "directory",
+          "description": ".NET / NuGet：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior"
+          ]
+        },
+        {
+          "id": "http-cache",
+          "path": "~/.local/share/NuGet/v3-cache",
+          "targetType": "directory",
+          "description": ".NET / NuGet：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "plugin-cache",
+          "path": "~/.local/share/NuGet/plugins-cache",
+          "targetType": "directory",
+          "description": ".NET / NuGet：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "script-sdk",
+          "path": "~/.dotnet",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "packages",
+          "path": "~/.nuget/packages",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "custom-packages",
+          "path": "${NUGET_PACKAGES}",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "custom-sdk",
+          "path": "${DOTNET_ROOT}",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-environment-variables"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${APPDATA}/NuGet/NuGet.Config",
+          "targetType": "file",
+          "description": ".NET / NuGet：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/reference/nuget-config-file"
+          ]
+        },
+        {
+          "id": "http-cache",
+          "path": "${LOCALAPPDATA}/NuGet/v3-cache",
+          "targetType": "directory",
+          "description": ".NET / NuGet：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "plugin-cache",
+          "path": "${LOCALAPPDATA}/NuGet/plugins-cache",
+          "targetType": "directory",
+          "description": ".NET / NuGet：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+          ]
+        },
+        {
+          "id": "script-sdk",
+          "path": "${LOCALAPPDATA}/Microsoft/dotnet",
+          "targetType": "directory",
+          "description": ".NET / NuGet：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script"
+          ]
+        }
+      ]
+    }
+  }
+}

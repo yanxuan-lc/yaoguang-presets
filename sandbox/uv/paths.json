@@ -1,0 +1,330 @@
+{
+  "id": "uv",
+  "name": "uv",
+  "description": "uv 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "uv current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "data 根含默认 credentials/credentials.toml，不是纯工具缓存；native store preview 和 netrc 另外核对。",
+    "uv 即使 no-cache 也使用临时 cache；sync/install/python/tool 安装仍需写入许可。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${UV_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "uv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${UV_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "uv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-python",
+          "path": "${UV_PYTHON_INSTALL_DIR}",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-tools",
+          "path": "${UV_TOOL_DIR}",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-credentials",
+          "path": "${UV_CREDENTIALS_DIR}",
+          "targetType": "directory",
+          "description": "uv：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/uv/uv.toml",
+          "targetType": "file",
+          "description": "uv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/uv/uv.toml",
+          "targetType": "file",
+          "description": "uv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "data",
+          "path": "~/.local/share/uv",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "xdg-data",
+          "path": "${XDG_DATA_HOME}/uv",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/.cache/uv",
+          "targetType": "directory",
+          "description": "uv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "xdg-cache",
+          "path": "${XDG_CACHE_HOME}/uv",
+          "targetType": "directory",
+          "description": "uv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${UV_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "uv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${UV_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "uv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-python",
+          "path": "${UV_PYTHON_INSTALL_DIR}",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-tools",
+          "path": "${UV_TOOL_DIR}",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-credentials",
+          "path": "${UV_CREDENTIALS_DIR}",
+          "targetType": "directory",
+          "description": "uv：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "~/.config/uv/uv.toml",
+          "targetType": "file",
+          "description": "uv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "xdg-config",
+          "path": "${XDG_CONFIG_HOME}/uv/uv.toml",
+          "targetType": "file",
+          "description": "uv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "data",
+          "path": "~/.local/share/uv",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "xdg-data",
+          "path": "${XDG_DATA_HOME}/uv",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "~/.cache/uv",
+          "targetType": "directory",
+          "description": "uv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "xdg-cache",
+          "path": "${XDG_CACHE_HOME}/uv",
+          "targetType": "directory",
+          "description": "uv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "custom-config",
+          "path": "${UV_CONFIG_FILE}",
+          "targetType": "file",
+          "description": "uv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-cache",
+          "path": "${UV_CACHE_DIR}",
+          "targetType": "directory",
+          "description": "uv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-python",
+          "path": "${UV_PYTHON_INSTALL_DIR}",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-tools",
+          "path": "${UV_TOOL_DIR}",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "custom-credentials",
+          "path": "${UV_CREDENTIALS_DIR}",
+          "targetType": "directory",
+          "description": "uv：文件凭据读取；命令可读取其中全部认证内容。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "config",
+          "path": "${APPDATA}/uv/uv.toml",
+          "targetType": "file",
+          "description": "uv：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "data",
+          "path": "${APPDATA}/uv/data",
+          "targetType": "directory",
+          "description": "uv：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        },
+        {
+          "id": "cache",
+          "path": "${LOCALAPPDATA}/uv/cache",
+          "targetType": "directory",
+          "description": "uv：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.astral.sh/uv/reference/storage/"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "id": "yarn",
+  "name": "Yarn",
+  "description": "Yarn 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Yarn Berry current",
+      "Yarn Classic 1"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "现代配置可能含 npmAuthToken；Classic 的完整认证加载序列尚未验证，可能另需 npmrc。",
+    "globalFolder/cacheFolder/YARN_CACHE_FOLDER、项目 linker、包脚本和构建写入另外处理。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "modern-config",
+          "path": "~/.yarnrc.yml",
+          "targetType": "file",
+          "description": "Yarn：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://yarnpkg.com/configuration/yarnrc"
+          ]
+        },
+        {
+          "id": "classic-config",
+          "path": "~/.yarnrc",
+          "targetType": "file",
+          "description": "Yarn：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://classic.yarnpkg.com/en/docs/yarnrc/"
+          ]
+        },
+        {
+          "id": "berry",
+          "path": "~/.yarn/berry",
+          "targetType": "directory",
+          "description": "Yarn：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/yarnpkg/berry/blob/master/packages/yarnpkg-core/sources/folderUtils.ts"
+          ]
+        },
+        {
+          "id": "xdg-berry",
+          "path": "${XDG_DATA_HOME}/yarn/berry",
+          "targetType": "directory",
+          "description": "Yarn：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/yarnpkg/berry/blob/master/packages/yarnpkg-core/sources/folderUtils.ts"
+          ]
+        },
+        {
+          "id": "classic-cache",
+          "path": "~/Library/Caches/Yarn",
+          "targetType": "directory",
+          "description": "Yarn：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/yarnpkg/yarn/blob/master/src/util/user-dirs.js"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "modern-config",
+          "path": "~/.yarnrc.yml",
+          "targetType": "file",
+          "description": "Yarn：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://yarnpkg.com/configuration/yarnrc"
+          ]
+        },
+        {
+          "id": "classic-config",
+          "path": "~/.yarnrc",
+          "targetType": "file",
+          "description": "Yarn：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://classic.yarnpkg.com/en/docs/yarnrc/"
+          ]
+        },
+        {
+          "id": "berry",
+          "path": "~/.yarn/berry",
+          "targetType": "directory",
+          "description": "Yarn：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/yarnpkg/berry/blob/master/packages/yarnpkg-core/sources/folderUtils.ts"
+          ]
+        },
+        {
+          "id": "xdg-berry",
+          "path": "${XDG_DATA_HOME}/yarn/berry",
+          "targetType": "directory",
+          "description": "Yarn：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/yarnpkg/berry/blob/master/packages/yarnpkg-core/sources/folderUtils.ts"
+          ]
+        },
+        {
+          "id": "classic-cache",
+          "path": "~/.cache/yarn",
+          "targetType": "directory",
+          "description": "Yarn：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/yarnpkg/yarn/blob/master/src/util/user-dirs.js"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "modern-config",
+          "path": "~/.yarnrc.yml",
+          "targetType": "file",
+          "description": "Yarn：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://yarnpkg.com/configuration/yarnrc"
+          ]
+        },
+        {
+          "id": "classic-config",
+          "path": "~/.yarnrc",
+          "targetType": "file",
+          "description": "Yarn：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://classic.yarnpkg.com/en/docs/yarnrc/"
+          ]
+        },
+        {
+          "id": "berry",
+          "path": "${LOCALAPPDATA}/Yarn/Berry",
+          "targetType": "directory",
+          "description": "Yarn：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/yarnpkg/berry/blob/master/packages/yarnpkg-core/sources/folderUtils.ts"
+          ]
+        },
+        {
+          "id": "classic-cache",
+          "path": "${LOCALAPPDATA}/Yarn/Cache",
+          "targetType": "directory",
+          "description": "Yarn：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/yarnpkg/yarn/blob/master/src/util/user-dirs.js"
+          ]
+        }
+      ]
+    }
+  }
+}

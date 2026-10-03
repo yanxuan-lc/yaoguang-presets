@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "YaoGuang sandbox readable preset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "description",
+    "verification",
+    "notes",
+    "platforms"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "\\S"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024,
+      "pattern": "\\S"
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "toolVersions",
+        "checkedAt"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "documentation",
+            "sandbox-tested"
+          ]
+        },
+        "toolVersions": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "\\S"
+          }
+        },
+        "checkedAt": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 32,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2048,
+        "pattern": "\\S"
+      }
+    },
+    "platforms": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {
+        "darwin": {
+          "$ref": "#/$defs/platform"
+        },
+        "linux": {
+          "$ref": "#/$defs/platform"
+        },
+        "win32": {
+          "$ref": "#/$defs/platform"
+        }
+      },
+      "minProperties": 1
+    }
+  },
+  "$defs": {
+    "platform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "readable"
+      ],
+      "properties": {
+        "readable": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4096,
+          "items": {
+            "$ref": "#/$defs/entry"
+          }
+        }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "path",
+        "targetType",
+        "description",
+        "containsCredentials",
+        "sources"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 4096,
+          "pattern": "^(?!.*(?:^|/)(?:\\.|\\.\\.)(?:/|$))(?!.*//)(?:~/(?!$)|/(?!/|$)|[A-Za-z]:/(?!/|$)|\\$\\{(?:XDG_CONFIG_HOME|XDG_CACHE_HOME|XDG_DATA_HOME|XDG_STATE_HOME|JAVA_HOME|GRADLE_USER_HOME|SDKMAN_DIR|GOPATH|GOCACHE|GOROOT|CARGO_HOME|RUSTUP_HOME|PNPM_HOME|NVM_DIR|VOLTA_HOME|FNM_DIR|PYENV_ROOT|PIP_CONFIG_FILE|PIP_CACHE_DIR|UV_CACHE_DIR|UV_CONFIG_FILE|UV_TOOL_DIR|UV_PYTHON_INSTALL_DIR|UV_CREDENTIALS_DIR|POETRY_CONFIG_DIR|POETRY_CACHE_DIR|CONDA_PREFIX|NUGET_PACKAGES|DOTNET_ROOT|GEM_HOME|COMPOSER_HOME|COMPOSER_CACHE_DIR|PUB_CACHE|ANDROID_HOME|ANDROID_USER_HOME|PLAYWRIGHT_BROWSERS_PATH|DOCKER_CONFIG|GH_CONFIG_DIR|GLAB_CONFIG_DIR|AWS_CONFIG_FILE|AWS_SHARED_CREDENTIALS_FILE|CLOUDSDK_CONFIG|AZURE_CONFIG_DIR|TF_CLI_CONFIG_FILE|APPDATA|LOCALAPPDATA|USERPROFILE)\\}(?:/|$))[^\\u0000-\\u001f\\u007f\\\\*?\\[\\]{}$`:]*$"
+        },
+        "targetType": {
+          "enum": [
+            "file",
+            "directory"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512,
+          "pattern": "\\S"
+        },
+        "containsCredentials": {
+          "type": "boolean"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "minLength": 9,
+            "maxLength": 2048,
+            "pattern": "^https://",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  },
+  "$comment": "Paths are literal data. Directory identity, duplicate entries, platform syntax, byte budgets and evidence links also require repository validation."
+}

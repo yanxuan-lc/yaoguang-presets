@@ -1,0 +1,252 @@
+{
+  "id": "java",
+  "name": "Java / Maven / Gradle / SDKMAN",
+  "description": "Java / Maven / Gradle / SDKMAN 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "Maven 3.9",
+      "Gradle current",
+      "SDKMAN current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "Maven settings 和 Gradle properties 可含认证；localRepository/-s/-gs、自定义 JDK 位置需要手工补。",
+    "Gradle metadata 读取也使用锁；官方只读依赖缓存是另外机制，不承诺只读模板足以构建。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "java-home",
+          "path": "${JAVA_HOME}",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/install.html"
+          ]
+        },
+        {
+          "id": "maven-settings",
+          "path": "~/.m2/settings.xml",
+          "targetType": "file",
+          "description": "Java / Maven / Gradle / SDKMAN：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/settings.html"
+          ]
+        },
+        {
+          "id": "maven-security",
+          "path": "~/.m2/settings-security.xml",
+          "targetType": "file",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/guides/mini/guide-encryption.html"
+          ]
+        },
+        {
+          "id": "maven-repository",
+          "path": "~/.m2/repository",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/settings.html"
+          ]
+        },
+        {
+          "id": "gradle",
+          "path": "~/.gradle",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gradle.org/current/userguide/directory_layout.html"
+          ]
+        },
+        {
+          "id": "custom-gradle",
+          "path": "${GRADLE_USER_HOME}",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gradle.org/current/userguide/build_environment.html"
+          ]
+        },
+        {
+          "id": "sdkman",
+          "path": "~/.sdkman",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://sdkman.io/install/"
+          ]
+        },
+        {
+          "id": "custom-sdkman",
+          "path": "${SDKMAN_DIR}",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://sdkman.io/install/"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "java-home",
+          "path": "${JAVA_HOME}",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/install.html"
+          ]
+        },
+        {
+          "id": "maven-settings",
+          "path": "~/.m2/settings.xml",
+          "targetType": "file",
+          "description": "Java / Maven / Gradle / SDKMAN：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/settings.html"
+          ]
+        },
+        {
+          "id": "maven-security",
+          "path": "~/.m2/settings-security.xml",
+          "targetType": "file",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/guides/mini/guide-encryption.html"
+          ]
+        },
+        {
+          "id": "maven-repository",
+          "path": "~/.m2/repository",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/settings.html"
+          ]
+        },
+        {
+          "id": "gradle",
+          "path": "~/.gradle",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gradle.org/current/userguide/directory_layout.html"
+          ]
+        },
+        {
+          "id": "custom-gradle",
+          "path": "${GRADLE_USER_HOME}",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gradle.org/current/userguide/build_environment.html"
+          ]
+        },
+        {
+          "id": "sdkman",
+          "path": "~/.sdkman",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://sdkman.io/install/"
+          ]
+        },
+        {
+          "id": "custom-sdkman",
+          "path": "${SDKMAN_DIR}",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://sdkman.io/install/"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "java-home",
+          "path": "${JAVA_HOME}",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/install.html"
+          ]
+        },
+        {
+          "id": "maven-settings",
+          "path": "~/.m2/settings.xml",
+          "targetType": "file",
+          "description": "Java / Maven / Gradle / SDKMAN：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/settings.html"
+          ]
+        },
+        {
+          "id": "maven-security",
+          "path": "~/.m2/settings-security.xml",
+          "targetType": "file",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/guides/mini/guide-encryption.html"
+          ]
+        },
+        {
+          "id": "maven-repository",
+          "path": "~/.m2/repository",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/settings.html"
+          ]
+        },
+        {
+          "id": "gradle",
+          "path": "~/.gradle",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gradle.org/current/userguide/directory_layout.html"
+          ]
+        },
+        {
+          "id": "custom-gradle",
+          "path": "${GRADLE_USER_HOME}",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.gradle.org/current/userguide/build_environment.html"
+          ]
+        }
+      ]
+    }
+  }
+}

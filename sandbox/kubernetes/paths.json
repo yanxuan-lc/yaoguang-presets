@@ -1,0 +1,60 @@
+{
+  "id": "kubernetes",
+  "name": "Kubernetes / kubectl",
+  "description": "Kubernetes / kubectl 的研发配置、工具与依赖读取候选。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "kubectl current"
+    ],
+    "checkedAt": "2026-10-03"
+  },
+  "notes": [
+    "kubeconfig 可含 token、client key、证书和 exec 配置；KUBECONFIG 文件列表及引用文件需手工补。",
+    "exec 认证插件、集群网络、配置写入与集群修改单独授权。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.kube/config",
+          "targetType": "file",
+          "description": "Kubernetes / kubectl：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.kube/config",
+          "targetType": "file",
+          "description": "Kubernetes / kubectl：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/"
+          ]
+        }
+      ]
+    },
+    "win32": {
+      "readable": [
+        {
+          "id": "config",
+          "path": "~/.kube/config",
+          "targetType": "file",
+          "description": "Kubernetes / kubectl：用户配置读取，可能包含认证参数或外部文件引用。",
+          "containsCredentials": true,
+          "sources": [
+            "https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/"
+          ]
+        }
+      ]
+    }
+  }
+}
