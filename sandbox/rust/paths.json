@@ -12,7 +12,8 @@
   },
   "notes": [
     "Cargo 根包含 credentials.toml、配置、程序和私有依赖，整个目录不是纯缓存。",
-    "credential provider、下载、工具链更新及 target/install 写入另行授权；locked 不等于文件系统只读。"
+    "credential provider、下载、工具链更新及 target/install 写入另行授权；locked 不等于文件系统只读。",
+    "工具安装根及运行缓存只读；这些目录可能包含私有数据，不承诺只读访问足以完成安装或构建。"
   ],
   "platforms": {
     "darwin": {

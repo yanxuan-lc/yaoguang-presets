@@ -13,7 +13,9 @@
   },
   "notes": [
     "Maven settings 和 Gradle properties 可含认证；localRepository/-s/-gs、自定义 JDK 位置需要手工补。",
-    "Gradle metadata 读取也使用锁；官方只读依赖缓存是另外机制，不承诺只读模板足以构建。"
+    "Gradle metadata 读取也使用锁；官方只读依赖缓存是另外机制，不承诺只读模板足以构建。",
+    "工具安装根及运行缓存只读；这些目录可能包含私有数据，不承诺只读访问足以完成安装或构建。",
+    "~/.m2 是包含 repository、settings.xml 和 settings-security.xml 的用户根；递归范围也包含用户放入的其他配置或私有数据。"
   ],
   "platforms": {
     "darwin": {
@@ -96,6 +98,17 @@
           "containsCredentials": true,
           "sources": [
             "https://sdkman.io/install/"
+          ]
+        },
+        {
+          "id": "runtime-root-1",
+          "path": "~/.m2",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/settings.html",
+            "https://maven.apache.org/guides/mini/guide-encryption.html"
           ]
         }
       ]
@@ -180,6 +193,17 @@
           "containsCredentials": true,
           "sources": [
             "https://sdkman.io/install/"
+          ]
+        },
+        {
+          "id": "runtime-root-1",
+          "path": "~/.m2",
+          "targetType": "directory",
+          "description": "Java / Maven / Gradle / SDKMAN：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://maven.apache.org/settings.html",
+            "https://maven.apache.org/guides/mini/guide-encryption.html"
           ]
         }
       ]

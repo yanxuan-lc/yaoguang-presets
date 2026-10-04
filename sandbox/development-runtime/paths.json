@@ -1,0 +1,67 @@
+{
+  "id": "development-runtime",
+  "name": "共享研发运行目录",
+  "description": "用户共享可执行文件及缓存的可选读取范围；不会随基础运行环境自动安装。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "XDG Base Directory Specification"
+    ],
+    "checkedAt": "2026-10-04"
+  },
+  "notes": [
+    "~/.local/bin 可能包含多个工具的用户可执行文件；~/.cache 可能包含多个应用的私有数据及凭据。",
+    "仅在确实需要这些共享范围时选择；否则使用更窄的手动可读路径。",
+    "不包含整个用户主目录，不授予写入。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "local-bin",
+          "path": "~/.local/bin",
+          "targetType": "directory",
+          "description": "用户共享可执行文件的递归读取。",
+          "containsCredentials": true,
+          "sources": [
+            "https://specifications.freedesktop.org/basedir-spec/latest/"
+          ]
+        },
+        {
+          "id": "shared-cache",
+          "path": "~/.cache",
+          "targetType": "directory",
+          "description": "共享应用缓存的递归读取，可能包含私有数据和认证。",
+          "containsCredentials": true,
+          "sources": [
+            "https://specifications.freedesktop.org/basedir-spec/latest/"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "readable": [
+        {
+          "id": "local-bin",
+          "path": "~/.local/bin",
+          "targetType": "directory",
+          "description": "用户共享可执行文件的递归读取。",
+          "containsCredentials": true,
+          "sources": [
+            "https://specifications.freedesktop.org/basedir-spec/latest/"
+          ]
+        },
+        {
+          "id": "shared-cache",
+          "path": "~/.cache",
+          "targetType": "directory",
+          "description": "共享应用缓存的递归读取，可能包含私有数据和认证。",
+          "containsCredentials": true,
+          "sources": [
+            "https://specifications.freedesktop.org/basedir-spec/latest/"
+          ]
+        }
+      ]
+    }
+  }
+}

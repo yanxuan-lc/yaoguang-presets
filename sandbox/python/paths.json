@@ -12,7 +12,8 @@
   },
   "notes": [
     "pip 配置可含 index 认证 URL；netrc/keyring、site 配置、解释器/venv 根需另外配置。",
-    "pyenv 不等于 pyenv-win；安装、wheel 构建/缓存和环境写入不是读取模板授权。"
+    "pyenv 不等于 pyenv-win；安装、wheel 构建/缓存和环境写入不是读取模板授权。",
+    "工具安装根及运行缓存只读；这些目录可能包含私有数据，不承诺只读访问足以完成安装或构建。"
   ],
   "platforms": {
     "darwin": {

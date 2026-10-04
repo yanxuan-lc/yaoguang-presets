@@ -2,7 +2,7 @@
 
 瑶光的可维护配置模板库。不同配置类型按顶层目录分开，当前实现 `sandbox/`：按技术分类描述**命令沙箱的额外可读路径**。以后新增类型时使用独立目录与 schema。
 
-本仓库已经包含模板数据、校验与目录生成工具；瑶光的同步、选择和应用功能仍待产品实现。克隆、构建或校验本仓库不会修改本机的瑶光权限。
+本仓库提供模板数据、校验与目录生成工具。瑶光在专业模式的「沙箱管理 → 系统沙箱规则」中安装、卸载和更新分类，并汇总已应用的可读路径及来源。基础运行环境随产品携带真实 Git 提交的离线副本，新安装默认安装一次；研发与账号分类由用户按需选择。克隆、构建或校验本仓库不会修改本机的瑶光权限。
 
 ## 本地维护
 
@@ -35,7 +35,7 @@ test/catalog.test.mjs
 .github/workflows/check.yml
 ```
 
-每个分类独立维护，无隐式依赖启用。Java 不会替用户启用 Git、Docker 不会启用云账号。当前分类如下；逐项的路径、平台与依据见各目录说明。
+每个分类独立维护，无隐式依赖启用。Java 不会替用户启用 Git、Docker 不会启用云账号。当前有 35 个分类；逐项的路径、平台与依据见各目录说明。基础与共享运行目录独立于技术分类，不隐式启用其他分类。
 
 | 分类 | 名称 | 平台 |
 | --- | --- | --- |
@@ -47,6 +47,7 @@ test/catalog.test.mjs
 | [bun](sandbox/bun/README.md) | Bun | darwin, linux, win32 |
 | [composer](sandbox/composer/README.md) | PHP / Composer | darwin, linux, win32 |
 | [conda](sandbox/conda/README.md) | Conda | darwin, linux, win32 |
+| [development-runtime](sandbox/development-runtime/README.md) | 共享研发运行目录（按需安装） | darwin, linux |
 | [deno](sandbox/deno/README.md) | Deno | darwin, linux, win32 |
 | [docker](sandbox/docker/README.md) | Docker / Compose | darwin, linux, win32 |
 | [dotnet](sandbox/dotnet/README.md) | .NET / NuGet | darwin, linux, win32 |
@@ -68,6 +69,7 @@ test/catalog.test.mjs
 | [ruby](sandbox/ruby/README.md) | Ruby / RubyGems / Bundler | darwin, linux, win32 |
 | [rust](sandbox/rust/README.md) | Rust / Cargo / rustup | darwin, linux, win32 |
 | [ssh](sandbox/ssh/README.md) | OpenSSH | darwin, linux, win32 |
+| [system-runtime](sandbox/system-runtime/README.md) | 基础运行环境（新安装默认安装） | darwin |
 | [tencent-cloud](sandbox/tencent-cloud/README.md) | 腾讯云 CLI | darwin, linux, win32 |
 | [terraform](sandbox/terraform/README.md) | Terraform | darwin, linux, win32 |
 | [uv](sandbox/uv/README.md) | uv | darwin, linux, win32 |
@@ -90,7 +92,7 @@ test/catalog.test.mjs
 | readable[].containsCredentials | 是否声明可能含认证；false 不保证无秘密或私有内容 |
 | readable[].sources | 1–8 个官方 HTTPS 资料地址，不自动下载 |
 
-路径只支持 POSIX 绝对路径、`C:/...` 形式的 Windows 绝对路径、`~/...` 或开头一个 `${NAME}`，统一使用 `/` 分隔符。禁止相对路径、`.`/`..` 段、glob、命令替换、重复斜杠、控制字符、根目录和字面整个 home；不支持 UNC。变量只允许 schema 路径表达式列出的工具定位名称，不能加入 token/secret 或任意变量。整个变量值是否为 root/home、是否是文件列表或无效值，必须由未来宿主在定位时拒绝；维护工具不读取环境。
+路径只支持 POSIX 绝对路径、`C:/...` 形式的 Windows 绝对路径、`~/...` 或开头一个 `${NAME}`，统一使用 `/` 分隔符。禁止相对路径、`.`/`..` 段、glob、命令替换、重复斜杠、控制字符、根目录和字面整个 home；不支持 UNC。变量只允许 schema 路径表达式列出的工具定位名称，不能加入 token/secret 或任意变量。整个变量值是否为 root/home、是否是文件列表或无效值，必须由宿主在定位时拒绝；维护工具不读取环境。
 
 默认和变量位置是候选集合，不是“设置变量就自动删除默认路径”的条件语法，二者可能同时存在。消费者必须预览全部具体目标，按同一真实目标及类型去重并保留来源。跨分类重复是合理的；平台内重复标识和相同定位式/类型会拒绝，末尾 `/` 不制造另一个目标。
 
@@ -114,7 +116,7 @@ test/catalog.test.mjs
 
 `index.json` 为 `{ "presets": [...] }`，分类按 id 的 ASCII 顺序排列，无生成时间。每项**仅**包含 id、path、blobSha、content。content 是 paths.json 的完整原始 UTF-8 文本，blobSha 为 Git SHA-1 blob 摘要：`SHA1("blob " + UTF8字节数 + NUL + 原始字节)`。JSON 字段重排或空白修改也需要重建目录。
 
-未来消费者取得同一 Git 提交的完整 tree 后，核对所有分类文件、普通文件模式、原文摘要与 bundle 是否一一对应。不能仅信任 index 的 id 或摘要。读取其他配置类型时不得隐式加载 sandbox 目录。
+消费者取得同一 Git 提交的完整 tree 后，核对所有分类文件、普通文件模式、原文摘要与 bundle 是否一一对应。不能仅信任 index 的 id 或摘要。读取其他配置类型时不得隐式加载 sandbox 目录。
 
 仓库校验的规模限制：每个配置和说明文件最多 128 KiB、分类最多 128、全部平台条目合计最多 4096、生成目录最多 8 MiB、定位式最多 4096 字符。schema 另限制名称/说明/source 等字段长度。配置、说明及 schema 必须为普通文件，不接受符号链接、submodule 或可执行配置；不兼容的格式直接修改 schema、校验器与消费者，不引入版本协商或自动迁移权限。
 
@@ -124,4 +126,4 @@ test/catalog.test.mjs
 
 本地已在 macOS、Node 24.15.0 上进行维护工具验证。测试关注确定性原文/摘要、严格格式、非法路径、来源重名、文件链接/模式、输入预算、CLI 构建与只读校验。工具实现有观察到的先失败后通过记录；进一步路径/类型/URL 边界案例在已有实现上首次通过，二者不混同。
 
-模板目前是资料覆盖，不是研发任务成功率、轮次或 Token 收益数据。Linux/Windows 的实际工具运行、GitHub CI 和瑶光消费端尚未验证。产品实现和权限应用需要单独批准。
+模板目前是资料覆盖，不是研发任务成功率、轮次或 Token 收益数据。Linux/Windows 的实际工具运行及 GitHub CI 结果须以各自的实际记录为准；模板的 documentation 声明不代表消费端或真实研发任务已验证。用户安装、更新或卸载分类时须在瑶光核对路径预览并确认应用。

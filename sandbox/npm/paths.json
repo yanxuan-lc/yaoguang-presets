@@ -11,7 +11,8 @@
   },
   "notes": [
     "npmrc 可含 token、密码及证书位置；userconfig/globalconfig/prefix/cache 可覆盖，当前定位语法不自动探测。",
-    "npmjs、GitHub Packages 和企业 registry 按实际 scope 配置；install/login/publish 与日志写入、网络独立授权。"
+    "npmjs、GitHub Packages 和企业 registry 按实际 scope 配置；install/login/publish 与日志写入、网络独立授权。",
+    "工具安装根及运行缓存只读；这些目录可能包含私有数据，不承诺只读访问足以完成安装或构建。"
   ],
   "platforms": {
     "darwin": {

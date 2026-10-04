@@ -11,7 +11,8 @@
   },
   "notes": [
     "官方脚本安装的程序位置；其他 package manager 安装位置由对应工具决定。",
-    "DENO_INSTALL/DENO_DIR 不在当前变量语法中，覆盖位置需手工补；私有模块、Deno 自身权限、依赖下载与缓存写入另行处理。"
+    "DENO_INSTALL/DENO_DIR 不在当前变量语法中，覆盖位置需手工补；私有模块、Deno 自身权限、依赖下载与缓存写入另行处理。",
+    "工具安装根及运行缓存只读；这些目录可能包含私有数据，不承诺只读访问足以完成安装或构建。"
   ],
   "platforms": {
     "darwin": {
@@ -31,6 +32,16 @@
           "path": "~/Library/Caches/deno",
           "targetType": "directory",
           "description": "Deno：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.deno.com/runtime/getting_started/installation/"
+          ]
+        },
+        {
+          "id": "runtime-root-1",
+          "path": "~/.deno",
+          "targetType": "directory",
+          "description": "Deno：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
           "containsCredentials": true,
           "sources": [
             "https://docs.deno.com/runtime/getting_started/installation/"
@@ -55,6 +66,16 @@
           "path": "~/.cache/deno",
           "targetType": "directory",
           "description": "Deno：依赖或构建缓存读取，可能包含私有包和用户数据。",
+          "containsCredentials": true,
+          "sources": [
+            "https://docs.deno.com/runtime/getting_started/installation/"
+          ]
+        },
+        {
+          "id": "runtime-root-1",
+          "path": "~/.deno",
+          "targetType": "directory",
+          "description": "Deno：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
           "containsCredentials": true,
           "sources": [
             "https://docs.deno.com/runtime/getting_started/installation/"

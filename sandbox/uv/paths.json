@@ -11,7 +11,8 @@
   },
   "notes": [
     "data 根含默认 credentials/credentials.toml，不是纯工具缓存；native store preview 和 netrc 另外核对。",
-    "uv 即使 no-cache 也使用临时 cache；sync/install/python/tool 安装仍需写入许可。"
+    "uv 即使 no-cache 也使用临时 cache；sync/install/python/tool 安装仍需写入许可。",
+    "工具安装根及运行缓存只读；这些目录可能包含私有数据，不承诺只读访问足以完成安装或构建。"
   ],
   "platforms": {
     "darwin": {

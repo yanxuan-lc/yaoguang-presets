@@ -12,7 +12,8 @@
   },
   "notes": [
     "安装根包含可执行程序和附属用户配置，不保证无敏感数据。",
-    "平台 fnm 默认目录未猜测；NODE_PATH、额外 CA、应用资源、包管理认证及非标准安装路径需手工核对。"
+    "fnm 包含 ~/.fnm 的旧安装、XDG 数据目录和 multishell 状态目录候选；自定义 XDG 运行/状态目录、NODE_PATH、额外 CA、应用资源和非标准安装位置需手工核对。",
+    "工具安装根及运行缓存只读；这些目录可能包含私有数据，不承诺只读访问足以完成安装或构建。"
   ],
   "platforms": {
     "darwin": {
@@ -65,6 +66,36 @@
           "containsCredentials": true,
           "sources": [
             "https://github.com/nvm-sh/nvm"
+          ]
+        },
+        {
+          "id": "runtime-root-3",
+          "path": "~/.fnm",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/Schniz/fnm/blob/master/src/directories.rs"
+          ]
+        },
+        {
+          "id": "runtime-root-4",
+          "path": "~/.local/share/fnm",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/Schniz/fnm/blob/master/src/directories.rs"
+          ]
+        },
+        {
+          "id": "runtime-root-5",
+          "path": "~/.local/state/fnm_multishells",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/Schniz/fnm/blob/master/src/directories.rs"
           ]
         }
       ]
@@ -119,6 +150,36 @@
           "containsCredentials": true,
           "sources": [
             "https://github.com/nvm-sh/nvm"
+          ]
+        },
+        {
+          "id": "runtime-root-3",
+          "path": "~/.fnm",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/Schniz/fnm/blob/master/src/directories.rs"
+          ]
+        },
+        {
+          "id": "runtime-root-4",
+          "path": "~/.local/share/fnm",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/Schniz/fnm/blob/master/src/directories.rs"
+          ]
+        },
+        {
+          "id": "runtime-root-5",
+          "path": "~/.local/state/fnm_multishells",
+          "targetType": "directory",
+          "description": "Node.js 与版本管理器：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/Schniz/fnm/blob/master/src/directories.rs"
           ]
         }
       ]

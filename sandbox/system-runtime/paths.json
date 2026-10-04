@@ -1,0 +1,103 @@
+{
+  "id": "system-runtime",
+  "name": "基础运行环境",
+  "description": "macOS 基础命令、系统库和系统运行数据的只读访问；新安装随平台扩展默认安装。",
+  "verification": {
+    "level": "documentation",
+    "toolVersions": [
+      "macOS system runtime"
+    ],
+    "checkedAt": "2026-10-04"
+  },
+  "notes": [
+    "仅覆盖八个系统目录，不包含 Homebrew、Xcode 或用户研发工具目录。",
+    "/Library 和系统配置目录可能包含主机及应用配置；安装前核对整个递归读取范围。",
+    "只授予读取，缺失目录不会在以后出现时自动获权。"
+  ],
+  "platforms": {
+    "darwin": {
+      "readable": [
+        {
+          "id": "system-1",
+          "path": "/usr",
+          "targetType": "directory",
+          "description": "macOS 系统运行目录的递归读取：/usr；不授予写入。",
+          "containsCredentials": false,
+          "sources": [
+            "https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html"
+          ]
+        },
+        {
+          "id": "system-2",
+          "path": "/bin",
+          "targetType": "directory",
+          "description": "macOS 系统运行目录的递归读取：/bin；不授予写入。",
+          "containsCredentials": false,
+          "sources": [
+            "https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html"
+          ]
+        },
+        {
+          "id": "system-3",
+          "path": "/sbin",
+          "targetType": "directory",
+          "description": "macOS 系统运行目录的递归读取：/sbin；不授予写入。",
+          "containsCredentials": false,
+          "sources": [
+            "https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html"
+          ]
+        },
+        {
+          "id": "system-4",
+          "path": "/System",
+          "targetType": "directory",
+          "description": "macOS 系统运行目录的递归读取：/System；不授予写入。",
+          "containsCredentials": false,
+          "sources": [
+            "https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html"
+          ]
+        },
+        {
+          "id": "system-5",
+          "path": "/Library",
+          "targetType": "directory",
+          "description": "macOS 系统运行目录的递归读取：/Library；不授予写入。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html"
+          ]
+        },
+        {
+          "id": "system-6",
+          "path": "/private/etc",
+          "targetType": "directory",
+          "description": "macOS 系统运行目录的递归读取：/private/etc；不授予写入。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html"
+          ]
+        },
+        {
+          "id": "system-7",
+          "path": "/private/var/db",
+          "targetType": "directory",
+          "description": "macOS 系统运行目录的递归读取：/private/var/db；不授予写入。",
+          "containsCredentials": true,
+          "sources": [
+            "https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html"
+          ]
+        },
+        {
+          "id": "system-8",
+          "path": "/private/var/select",
+          "targetType": "directory",
+          "description": "macOS 系统运行目录的递归读取：/private/var/select；不授予写入。",
+          "containsCredentials": false,
+          "sources": [
+            "https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -11,7 +11,9 @@
   },
   "notes": [
     "配置根内 auth.ini 和 config.yaml structured _auth 均可含认证；不能按最新网页替代 11.13.1 源码。",
-    "未声明 configDir/rc；storeDir、跨盘 store、userconfig 及 setup 写 shell 配置需另核对。"
+    "未声明 configDir/rc；storeDir、跨盘 store、userconfig 及 setup 写 shell 配置需另核对。",
+    "工具安装根及运行缓存只读；这些目录可能包含私有数据，不承诺只读访问足以完成安装或构建。",
+    "~/.pnpm-store 是旧版 @pnpm/store-path 源码声明的存储候选，并非 pnpm 11 默认；保留旧安装时才需要读取。"
   ],
   "platforms": {
     "darwin": {
@@ -111,6 +113,26 @@
           "path": "~/.local/state/pnpm",
           "targetType": "directory",
           "description": "pnpm：工具、配置及附属数据的递归读取；核对整个目录范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "runtime-root-1",
+          "path": "~/.pnpm-store",
+          "targetType": "directory",
+          "description": "pnpm：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/store-path/blob/master/src/index.ts"
+          ]
+        },
+        {
+          "id": "runtime-root-3",
+          "path": "~/.local/share/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
           "containsCredentials": true,
           "sources": [
             "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
@@ -218,6 +240,26 @@
           "containsCredentials": true,
           "sources": [
             "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/dirs.ts"
+          ]
+        },
+        {
+          "id": "runtime-root-1",
+          "path": "~/.pnpm-store",
+          "targetType": "directory",
+          "description": "pnpm：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/store-path/blob/master/src/index.ts"
+          ]
+        },
+        {
+          "id": "runtime-root-2",
+          "path": "~/Library/pnpm",
+          "targetType": "directory",
+          "description": "pnpm：工具安装、运行数据及缓存的递归读取；可能包含私有包或认证配置，安装前核对范围。",
+          "containsCredentials": true,
+          "sources": [
+            "https://github.com/pnpm/pnpm/blob/v11.13.1/pnpm11/config/reader/src/loadNpmrcFiles.ts"
           ]
         }
       ]

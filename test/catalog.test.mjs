@@ -290,3 +290,36 @@ test('CRLF sources are rejected before Git attributes could change committed blo
   await writeFile(file, (await readFile(file, 'utf8')).replaceAll('\n', '\r\n'))
   await assert.rejects(renderCatalog(root), /LF line endings/)
 })
+
+
+test('basic runtime contains only the eight system roots', async () => {
+  const catalog = JSON.parse(await renderCatalog(fileURLToPath(new URL('../', import.meta.url))))
+  const stored = catalog.presets.find((p) => p.id === 'system-runtime')
+  assert.ok(stored, 'basic runtime must be available')
+  const item = JSON.parse(stored.content)
+  assert.deepEqual(item.platforms.darwin.readable.map((p) => p.path), [
+    '/usr', '/bin', '/sbin', '/System', '/Library', '/private/etc', '/private/var/db', '/private/var/select'
+  ])
+  assert.equal(Object.keys(item.platforms).length, 1)
+})
+
+
+test('optional development categories cover former toolchain roots without selecting them by default', async () => {
+  const catalog = JSON.parse(await renderCatalog(fileURLToPath(new URL('../', import.meta.url))))
+  const paths = catalog.presets.filter((p) => p.id !== 'system-runtime').flatMap((p) =>
+    JSON.parse(p.content).platforms.darwin?.readable.map((e) => e.path) ?? [])
+  for (const target of ['~/.nvm', '~/.volta', '~/.fnm', '~/.local/share/fnm', '~/.local/state/fnm_multishells', '~/.bun', '~/.deno', '~/.cargo', '~/.rustup', '~/.pnpm-store', '~/Library/pnpm', '~/.local/share/pnpm', '~/.npm', '~/.yarn', '~/.m2', '~/.gradle', '~/.sdkman', '~/.pyenv', '~/.local/share/uv', '~/.cache', '~/.local/bin']) {
+    assert.ok(paths.includes(target), `optional category must contain ${target}`)
+  }
+})
+
+
+test('added toolchain roots cite their own tool documentation', async () => {
+  const catalog = JSON.parse(await renderCatalog(fileURLToPath(new URL('../', import.meta.url))))
+  const node = JSON.parse(catalog.presets.find((p) => p.id === 'node').content)
+  for (const entry of node.platforms.darwin.readable.filter((e) => e.path.includes('fnm'))) {
+    assert.ok(entry.sources.every((url) => url.startsWith('https://github.com/Schniz/fnm')))
+  }
+  const java = JSON.parse(catalog.presets.find((p) => p.id === 'java').content)
+  assert.ok(java.platforms.darwin.readable.find((e) => e.path === '~/.m2').sources.includes('https://maven.apache.org/settings.html'))
+})
