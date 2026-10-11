@@ -1,0 +1,286 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "releases": {
+      "maxItems": 2000,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "releaseId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "packageName": {
+            "type": "string",
+            "maxLength": 214,
+            "pattern": "^(?:@[a-z0-9][a-z0-9._-]*\\/)?[a-z0-9][a-z0-9._-]*$"
+          },
+          "version": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "displayName": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "en-US": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120
+                  },
+                  "zh-CN": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120
+                  }
+                },
+                "required": [
+                  "en-US"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2048
+              },
+              {
+                "type": "object",
+                "minProperties": 1,
+                "maxProperties": 32,
+                "propertyNames": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 35
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                }
+              }
+            ]
+          },
+          "publisher": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "official",
+                  "third-party"
+                ]
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "url": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2048
+              }
+            },
+            "required": [
+              "kind",
+              "name",
+              "url"
+            ],
+            "additionalProperties": false
+          },
+          "authors": {
+            "minItems": 1,
+            "maxItems": 32,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "url": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "repository": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2048
+              },
+              "commit": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              }
+            },
+            "required": [
+              "repository",
+              "commit"
+            ],
+            "additionalProperties": false
+          },
+          "artifact": {
+            "type": "object",
+            "properties": {
+              "tarballUrl": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2048
+              },
+              "integrity": {
+                "type": "string",
+                "pattern": "^sha512-[A-Za-z0-9+/]{86}==$"
+              },
+              "size": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 67108864
+              }
+            },
+            "required": [
+              "tarballUrl",
+              "integrity",
+              "size"
+            ],
+            "additionalProperties": false
+          },
+          "compatibility": {
+            "type": "object",
+            "properties": {
+              "productRange": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "platforms": {
+                "minItems": 1,
+                "maxItems": 6,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "os": {
+                      "type": "string",
+                      "enum": [
+                        "linux",
+                        "darwin",
+                        "win32"
+                      ]
+                    },
+                    "arch": {
+                      "type": "string",
+                      "enum": [
+                        "x64",
+                        "arm64"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "os",
+                    "arch"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "productRange",
+              "platforms"
+            ],
+            "additionalProperties": false
+          },
+          "requiredProtocols": {
+            "maxItems": 32,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[a-z][a-z0-9._-]*$"
+            }
+          },
+          "review": {
+            "type": "object",
+            "properties": {
+              "reviewedAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              "evidence": {
+                "minItems": 1,
+                "maxItems": 32,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                }
+              }
+            },
+            "required": [
+              "reviewedAt",
+              "scope",
+              "evidence"
+            ],
+            "additionalProperties": false
+          },
+          "defaultInstall": {
+            "type": "boolean",
+            "description": "Install once during initial product setup when this exact release is compatible; omission leaves installation manual."
+          }
+        },
+        "required": [
+          "releaseId",
+          "packageName",
+          "version",
+          "displayName",
+          "description",
+          "publisher",
+          "authors",
+          "source",
+          "artifact",
+          "compatibility",
+          "requiredProtocols",
+          "review"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "releases"
+  ],
+  "additionalProperties": false
+}

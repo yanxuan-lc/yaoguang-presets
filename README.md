@@ -1,15 +1,15 @@
 # yaoguang-presets
 
-瑶光的可维护配置模板库。不同配置类型按顶层目录分开，当前实现 `sandbox/`：按技术分类描述**命令沙箱的额外可读路径**。以后新增类型时使用独立目录与 schema。
+瑶光的可维护配置模板库。不同配置类型按顶层目录分开，当前实现 `sandbox/` 与独立的 `extensions/`。`sandbox/`：按技术分类描述**命令沙箱的额外可读路径**。以后新增类型时使用独立目录与 schema。
 
 本仓库提供模板数据、校验与目录生成工具。瑶光在专业模式的「沙箱管理 → 系统沙箱规则」中安装、卸载和更新分类，并汇总已应用的可读路径及来源。基础运行环境随产品携带真实 Git 提交的离线副本，新安装默认安装一次；研发与账号分类由用户按需选择。克隆、构建或校验本仓库不会修改本机的瑶光权限。
 
 ## 本地维护
 
-需要 Node.js 22 或更新版本。使用 Node 内置模块，无第三方依赖，无需 `npm install`。
+需要 Node.js 22 或更新版本。沙箱入口使用 Node 内置模块；扩展目录的独立校验器使用锁定的 Ajv、格式校验和 SemVer 开发依赖。首次运行先执行 `npm ci --ignore-scripts`。
 
 ```sh
-npm run build     # 验证分类，原子生成 sandbox/index.json
+npm run build     # 分别校验并生成 sandbox/index.json 与 extensions/index.json
 npm run validate  # 验证格式、语义和目录新鲜度，不修改文件
 npm test          # 合成目录、故障输入与维护命令测试
 npm run check     # validate + test，提交前检查
@@ -18,6 +18,12 @@ npm run check     # validate + test，提交前检查
 也可直接运行 `node scripts/catalog.mjs build` 或 `validate`；从仓库根目录运行。维护过程不联网、不执行模板、不展开环境变量，也不探测模板指向的真实机器路径。
 
 GitHub Actions 已配置 Linux、macOS、Windows 与 Node 22/24 的检查矩阵；它只验证和测试，不自动提交、不发布或修改权限。尚未推送运行的 CI 不作为已通过结果。Windows 的执行位测试不适用，文件符号链接测试遇到系统权限限制时会明确跳过。
+
+## 配置快照
+
+配置变更在 `main` 合并后即可被产品同步。`presets/v1.0.0` 等 tag 标记该次配置快照，不切换产品读取来源，也不创建 npm 发行物或 GitHub Release。Actions 仅在 `main` push、目标为 `main` 的 PR 和 `presets/v*` tag 推送时执行既有配置校验；`dev` 普通 push 不运行检查矩阵。
+
+扩展制品先在 npm 完成发行，再经维护者审核真实地址、integrity、支持平台、依赖与 `compatibility.productRange` 后更新目录。合并前执行 `npm run check`，合并后再创建 annotated 快照 tag；npm 成功不自动授予核验资格，也不自动合并目录。
 
 ## 目录
 
@@ -127,3 +133,30 @@ test/catalog.test.mjs
 本地已在 macOS、Node 24.15.0 上进行维护工具验证。测试关注确定性原文/摘要、严格格式、非法路径、来源重名、文件链接/模式、输入预算、CLI 构建与只读校验。工具实现有观察到的先失败后通过记录；进一步路径/类型/URL 边界案例在已有实现上首次通过，二者不混同。
 
 模板目前是资料覆盖，不是研发任务成功率、轮次或 Token 收益数据。Linux/Windows 的实际工具运行及 GitHub CI 结果须以各自的实际记录为准；模板的 documentation 声明不代表消费端或真实研发任务已验证。用户安装、更新或卸载分类时须在瑶光核对路径预览并确认应用。
+
+## 已核验扩展目录
+
+`extensions/index.json` 是独立生成的精确发行物目录；每份记录放在 `extensions/releases/<名称>-<版本>.json`，使用 `schema/extensions.schema.json`。当前目录收录首批十四份官方发行记录，未发布包和合成测试记录不进入可安装清单。克隆、构建、刷新目录都不会安装扩展，沙箱 schema、生成字节、权限和安装行为保持原契约。扩展单独的入口为 `node scripts/extensions.mjs build`／`validate`。
+
+记录必须包含 npm 包名与完整 SemVer、显示名和说明、发布者种类 `official`／`third-party` 与名称网址、作者、精确源码提交、公共 npm tarball URL、SHA512 SRI 和压缩字节数、产品 SemVer 适用范围、实际 OS／CPU 组合、所需模型协议，以及带时区的审查日期、明确范围和至少一条公开 HTTPS 证据。验证整份目录时拒绝未知字段、来源枚举、重复发行记录、非法范围、空证据、任意 registry 和与名称版本不符的 tarball。
+
+官方包与第三方包均使用各自独立的 SemVer，通过 `compatibility.productRange` 声明支持的瑶光产品版本范围，不要求包版本与产品一致；第三方不要求 `@eum-agent/` 命名空间。`official` 与第三方的 `verified` 标记只说明该精确发行物的来源和审查，不承诺绝对安全，不授予文件或网络权限，也不会随新版本自动继承。维护者不得只凭包前缀、自声明或同名同版本授予来源资格。
+
+### 公开 PR 准入
+
+1. 先完成 npm 发行，提供可取得的构建后后端、所声明 UI 与目标平台 native 资产；目录安装对根和所有依赖使用 `--ignore-scripts`，需要安装时构建的发行物不准入。
+2. 提交一份精确版本 JSON 和公开审查证据；源码提交、tarball、SHA512、实际大小必须一一对应。第三方每个新版本都重新提交 PR，不能复用上一版资格。
+3. 维护者核对发布者／作者与源码来源，取得实际 tarball核对摘要、名版、入口、UI、依赖闭包与许可；明确审查了什么、未覆盖什么，记录真实日期及可追踪的 PR／报告／运行记录。CI 仅验证结构和语义，不代替人工审查，也不自动批准。
+4. 运行 `npm run build`、`npm run check`；维护者审查通过并合并后，固定提交快照才成为可安装目录。此仓库 CI 不发布 npm、不自动合并、不更改沙箱。
+
+撤回一份记录会停止其新目录安装资格；已安装的历史接纳事实、配置、凭据和数据由产品保留。未标记默认的扩展由用户明确安装和启用。每份 release 可选布尔字段 `defaultInstall`：只有显式 `true` 才参与新状态根的一次默认安装，省略或 `false` 保持手动安装；维护工具原样保留字段，不注入默认值。瑶光首次取得新鲜有效目录后，按实际产品版本和 OS／CPU 兼容性固定每包最高兼容版本，保存首次集合；以后刷新、重装和升级不追加新默认项，不自动更新已有版本，也不重新启用用户已停用或卸载的包。离线或未完成项在后续正常启动时核对原始持久操作后补装。该字段不改变来源资格、不增加权限，不允许覆盖用户的同名自定义包。
+
+### 首批官方发行
+
+已完成真实 npm 发布并核对精确制品的十四项为 `web-shell`、`file-explorer`、`automation-schedule`、`integration-acp`、`integration-mcp`、`channel-feishu`、`session-todo`、`llm-openai`、`llm-anthropic`、`llm-deepseek`、`llm-zhipu`、`llm-kimi`、`llm-minimax`、`llm-chatgpt`（包名均为 `@eum-agent/` 前缀，版本均为 `1.0.0`）。记录使用实际 npm tarball URL、SHA512 integrity 和压缩字节数，均设置 `defaultInstall: true`，支持平台声明为 `darwin/arm64` 与 `linux/x64`；新状态根按前述兼容性规则参与一次默认安装。
+
+第三方发行仍通过公开 PR 与维护者审查准入，不使用测试身份冒充已批准社区包。平台支持声明、原生资产交叉编译与目标机器实际运行验收分别记录。
+
+### 扩展语言标识
+
+本地化 displayName 使用 `en-US`（必填）和 `zh-CN`（可选）；本地化 description 使用相同的语言区域标识。产品内统一采用连字符形式，不使用 `en` 或 `en_US` 作为自有元数据语言键。description 仍可为字符串，其他语言映射由通用字典契约承载；修改翻译需要重新生成目录及对应记录摘要。

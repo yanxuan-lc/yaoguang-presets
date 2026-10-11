@@ -2,11 +2,18 @@
   "name": "yaoguang-presets",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "build": "node scripts/catalog.mjs build",
-    "validate": "node scripts/catalog.mjs validate",
+    "build": "node scripts/catalog.mjs build && node scripts/extensions.mjs build",
+    "validate": "node scripts/catalog.mjs validate && node scripts/extensions.mjs validate",
     "test": "node --test",
-    "check": "node scripts/catalog.mjs validate && node --test"
+    "check": "node scripts/catalog.mjs validate && node scripts/extensions.mjs validate && node --test"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "semver": "7.8.5"
   }
 }
