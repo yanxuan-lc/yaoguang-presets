@@ -34,7 +34,7 @@
         "size": 32309
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -90,7 +90,7 @@
         "size": 58551
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -146,7 +146,7 @@
         "size": 80602
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -202,7 +202,7 @@
         "size": 255407
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -258,7 +258,7 @@
         "size": 58861
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -314,7 +314,7 @@
         "size": 3567
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -370,7 +370,7 @@
         "size": 25473
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -426,7 +426,7 @@
         "size": 4591
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -482,7 +482,7 @@
         "size": 6135
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -538,7 +538,7 @@
         "size": 4171
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -594,7 +594,7 @@
         "size": 5571
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -650,7 +650,7 @@
         "size": 4009
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -706,7 +706,7 @@
         "size": 9489
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
@@ -762,7 +762,7 @@
         "size": 171342
       },
       "compatibility": {
-        "productRange": ">=1.0.0 <1.0.3",
+        "productRange": ">=1.0.0",
         "platforms": [
           {
             "os": "darwin",
