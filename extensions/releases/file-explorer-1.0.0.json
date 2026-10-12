@@ -32,7 +32,7 @@
     "size": 80602
   },
   "compatibility": {
-    "productRange": "=1.0.0",
+    "productRange": ">=1.0.0 <1.0.2",
     "platforms": [
       {
         "os": "darwin",
