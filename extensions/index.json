@@ -57,6 +57,62 @@
       }
     },
     {
+      "releaseId": "@eum-agent/automation-schedule@1.0.1",
+      "packageName": "@eum-agent/automation-schedule",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "Scheduled Automation",
+        "zh-CN": "定时任务"
+      },
+      "description": {
+        "en-US": "Time-based and recurring agent execution",
+        "zh-CN": "定时与周期性智能体任务执行"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/automation-schedule/-/automation-schedule-1.0.1.tgz",
+        "integrity": "sha512-7V5Lfru8ZfzgcCGDQRIvYgwy8E6UA/nSTLtUVZP0nSCfkGPzlyTLlDVc8G1pFPL97jX6jqlFcUaVp8LwbBcOPA==",
+        "size": 39823
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:09:13.149Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/automation-schedule/-/automation-schedule-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fautomation-schedule/1.0.1"
+        ]
+      }
+    },
+    {
       "releaseId": "@eum-agent/channel-feishu@1.0.0",
       "packageName": "@eum-agent/channel-feishu",
       "version": "1.0.0",
@@ -109,6 +165,62 @@
         "evidence": [
           "https://registry.npmjs.org/@eum-agent/channel-feishu/-/channel-feishu-1.0.0.tgz",
           "https://registry.npmjs.org/%40eum-agent%2Fchannel-feishu/1.0.0"
+        ]
+      }
+    },
+    {
+      "releaseId": "@eum-agent/channel-feishu@1.0.1",
+      "packageName": "@eum-agent/channel-feishu",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "Feishu Message Channel",
+        "zh-CN": "消息渠道 · 飞书"
+      },
+      "description": {
+        "en-US": "Feishu conversations, streaming cards and interactive replies",
+        "zh-CN": "飞书会话、流式卡片与交互回复"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/channel-feishu/-/channel-feishu-1.0.1.tgz",
+        "integrity": "sha512-KdcRGZJFeczvIkB5Uf45LkuoS/UFOgfqbi6P11szyuOEZBes5yj9koVqmAq9Qfxkxe6z3iO1tAud8cKzGo3nqQ==",
+        "size": 93089
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:12:06.275Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/channel-feishu/-/channel-feishu-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fchannel-feishu/1.0.1"
         ]
       }
     },
@@ -169,6 +281,62 @@
       }
     },
     {
+      "releaseId": "@eum-agent/file-explorer@1.0.1",
+      "packageName": "@eum-agent/file-explorer",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "Workspace Files",
+        "zh-CN": "工作空间文件"
+      },
+      "description": {
+        "en-US": "Sessionless workspace file browsing, transfers and private references",
+        "zh-CN": "独立的工作区文件浏览、传输与私有引用"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/file-explorer/-/file-explorer-1.0.1.tgz",
+        "integrity": "sha512-CW9u+blD87rQdY6HmMsbU3HXXtXj40ZxBq0dOzV6gZnM52TQCNfEweiKyiOelY9VTouuoPawrR/mb38SDJRmrw==",
+        "size": 82761
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:09:14.365Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/file-explorer/-/file-explorer-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Ffile-explorer/1.0.1"
+        ]
+      }
+    },
+    {
       "releaseId": "@eum-agent/integration-acp@1.0.0",
       "packageName": "@eum-agent/integration-acp",
       "version": "1.0.0",
@@ -221,6 +389,62 @@
         "evidence": [
           "https://registry.npmjs.org/@eum-agent/integration-acp/-/integration-acp-1.0.0.tgz",
           "https://registry.npmjs.org/%40eum-agent%2Fintegration-acp/1.0.0"
+        ]
+      }
+    },
+    {
+      "releaseId": "@eum-agent/integration-acp@1.0.1",
+      "packageName": "@eum-agent/integration-acp",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "ACP Agent Integration",
+        "zh-CN": "ACP 智能体接入"
+      },
+      "description": {
+        "en-US": "Delegation to local agents through the Agent Client Protocol",
+        "zh-CN": "通过 Agent Client Protocol 委派本地智能体"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/integration-acp/-/integration-acp-1.0.1.tgz",
+        "integrity": "sha512-NlcBG1jPjGKxjo+h2YvUT/Rj5GWZtSkw7+5i1CCU1OitjmG/PUQ9agLJyWOGT42yj20Xgzc5+SYQdmBrVMb42A==",
+        "size": 268169
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:10:36.165Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/integration-acp/-/integration-acp-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fintegration-acp/1.0.1"
         ]
       }
     },
@@ -281,6 +505,62 @@
       }
     },
     {
+      "releaseId": "@eum-agent/integration-mcp@1.0.1",
+      "packageName": "@eum-agent/integration-mcp",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "MCP Tool Integration",
+        "zh-CN": "MCP 工具接入"
+      },
+      "description": {
+        "en-US": "Tools, resources and prompts from Model Context Protocol servers",
+        "zh-CN": "接入 Model Context Protocol 服务器的工具、资源与提示词"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/integration-mcp/-/integration-mcp-1.0.1.tgz",
+        "integrity": "sha512-GUCxTWNeLDOmKhTP4lV0cmVKqgwYhHpk/x3tsrUdMHiHzVprOQMGeSTbOuQndUkNYYzTLXJIyWy32hCF+joAdA==",
+        "size": 72560
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:09:15.464Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/integration-mcp/-/integration-mcp-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fintegration-mcp/1.0.1"
+        ]
+      }
+    },
+    {
       "releaseId": "@eum-agent/llm-anthropic@1.0.0",
       "packageName": "@eum-agent/llm-anthropic",
       "version": "1.0.0",
@@ -333,6 +613,62 @@
         "evidence": [
           "https://registry.npmjs.org/@eum-agent/llm-anthropic/-/llm-anthropic-1.0.0.tgz",
           "https://registry.npmjs.org/%40eum-agent%2Fllm-anthropic/1.0.0"
+        ]
+      }
+    },
+    {
+      "releaseId": "@eum-agent/llm-anthropic@1.0.1",
+      "packageName": "@eum-agent/llm-anthropic",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "Anthropic Model Connection",
+        "zh-CN": "模型接入 · Anthropic"
+      },
+      "description": {
+        "en-US": "Anthropic model provider and catalogue",
+        "zh-CN": "Anthropic 品牌供应商与模型目录"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/llm-anthropic/-/llm-anthropic-1.0.1.tgz",
+        "integrity": "sha512-8G8+lM9+x6jJtYRRs1eLNF9XtwquVqhuQid+Vb68JxCrZqTvbwesmPdA7UhGNKSBIIGDMZmYO1EUbXoOLCESpg==",
+        "size": 3674
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:09:16.448Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/llm-anthropic/-/llm-anthropic-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fllm-anthropic/1.0.1"
         ]
       }
     },
@@ -393,6 +729,62 @@
       }
     },
     {
+      "releaseId": "@eum-agent/llm-chatgpt@1.0.1",
+      "packageName": "@eum-agent/llm-chatgpt",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "ChatGPT Subscription Connection",
+        "zh-CN": "模型接入 · ChatGPT 订阅"
+      },
+      "description": {
+        "en-US": "ChatGPT subscription API protocol, account login and model provider",
+        "zh-CN": "ChatGPT 订阅 API 协议、账号登录与模型服务"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/llm-chatgpt/-/llm-chatgpt-1.0.1.tgz",
+        "integrity": "sha512-QvFSC0vSTvXCjl1eH7/OqtHjA2JjnC581Ih+ECOn8NVCKfc3sXun8Be1qrB3YcwElS729B97hKwYXm9MGVnPLw==",
+        "size": 28805
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:09:17.446Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/llm-chatgpt/-/llm-chatgpt-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fllm-chatgpt/1.0.1"
+        ]
+      }
+    },
+    {
       "releaseId": "@eum-agent/llm-deepseek@1.0.0",
       "packageName": "@eum-agent/llm-deepseek",
       "version": "1.0.0",
@@ -445,6 +837,62 @@
         "evidence": [
           "https://registry.npmjs.org/@eum-agent/llm-deepseek/-/llm-deepseek-1.0.0.tgz",
           "https://registry.npmjs.org/%40eum-agent%2Fllm-deepseek/1.0.0"
+        ]
+      }
+    },
+    {
+      "releaseId": "@eum-agent/llm-deepseek@1.0.1",
+      "packageName": "@eum-agent/llm-deepseek",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "DeepSeek Model Connection",
+        "zh-CN": "模型接入 · DeepSeek"
+      },
+      "description": {
+        "en-US": "DeepSeek model provider using registered OpenAI and Anthropic protocols",
+        "zh-CN": "通过已注册的 OpenAI 与 Anthropic 协议接入 DeepSeek 模型"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/llm-deepseek/-/llm-deepseek-1.0.1.tgz",
+        "integrity": "sha512-viN3WSqkhCkkgqLWwI12KqHUSwYfKJAR78shzYp4SWEGZL0bGjqe7fnrfVI6JlPUy7cCqJqeH6oozbiMucj8Pw==",
+        "size": 4725
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:10:37.301Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/llm-deepseek/-/llm-deepseek-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fllm-deepseek/1.0.1"
         ]
       }
     },
@@ -505,6 +953,62 @@
       }
     },
     {
+      "releaseId": "@eum-agent/llm-kimi@1.0.1",
+      "packageName": "@eum-agent/llm-kimi",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "Kimi Model Connection",
+        "zh-CN": "模型接入 · Kimi"
+      },
+      "description": {
+        "en-US": "Kimi model provider using the OpenAI API protocol",
+        "zh-CN": "通过 OpenAI API 协议接入 Kimi 模型"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/llm-kimi/-/llm-kimi-1.0.1.tgz",
+        "integrity": "sha512-SotwyixtLV++oGUE+nKNv3QYEL+VTqXtGmGrFUXKvlfjcXfzbs4LUm8MTXz+/dEIpLrX0BTtjD3xPzSCLDHtKw==",
+        "size": 6136
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:13:44.713Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/llm-kimi/-/llm-kimi-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fllm-kimi/1.0.1"
+        ]
+      }
+    },
+    {
       "releaseId": "@eum-agent/llm-minimax@1.0.0",
       "packageName": "@eum-agent/llm-minimax",
       "version": "1.0.0",
@@ -557,6 +1061,62 @@
         "evidence": [
           "https://registry.npmjs.org/@eum-agent/llm-minimax/-/llm-minimax-1.0.0.tgz",
           "https://registry.npmjs.org/%40eum-agent%2Fllm-minimax/1.0.0"
+        ]
+      }
+    },
+    {
+      "releaseId": "@eum-agent/llm-minimax@1.0.1",
+      "packageName": "@eum-agent/llm-minimax",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "MiniMax Model Connection",
+        "zh-CN": "模型接入 · MiniMax"
+      },
+      "description": {
+        "en-US": "MiniMax model provider using the registered Anthropic protocol",
+        "zh-CN": "通过已注册的 Anthropic 协议接入 MiniMax 模型"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/llm-minimax/-/llm-minimax-1.0.1.tgz",
+        "integrity": "sha512-ZCLNAMndwizakaaZ9fpWDpGZtssnWtpxlQ+p1wM8GwfOaOvhnQbg8mDXi79gLbIJn3+jxOKKLNqzBpspJvY+eg==",
+        "size": 4301
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:09:18.414Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/llm-minimax/-/llm-minimax-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fllm-minimax/1.0.1"
         ]
       }
     },
@@ -617,6 +1177,62 @@
       }
     },
     {
+      "releaseId": "@eum-agent/llm-openai@1.0.1",
+      "packageName": "@eum-agent/llm-openai",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "OpenAI Model Connection",
+        "zh-CN": "模型接入 · OpenAI"
+      },
+      "description": {
+        "en-US": "OpenAI model provider and catalogue",
+        "zh-CN": "OpenAI 品牌供应商与模型目录"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/llm-openai/-/llm-openai-1.0.1.tgz",
+        "integrity": "sha512-7zS2gh2+pguV0RonYtH+C6q+OdQFjYWF+56I6Unu7F8MblVtEryMhekcqlbKa5xx9aJ0LmfE6/OUCmNhygQiew==",
+        "size": 5571
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:10:38.348Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/llm-openai/-/llm-openai-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fllm-openai/1.0.1"
+        ]
+      }
+    },
+    {
       "releaseId": "@eum-agent/llm-zhipu@1.0.0",
       "packageName": "@eum-agent/llm-zhipu",
       "version": "1.0.0",
@@ -669,6 +1285,62 @@
         "evidence": [
           "https://registry.npmjs.org/@eum-agent/llm-zhipu/-/llm-zhipu-1.0.0.tgz",
           "https://registry.npmjs.org/%40eum-agent%2Fllm-zhipu/1.0.0"
+        ]
+      }
+    },
+    {
+      "releaseId": "@eum-agent/llm-zhipu@1.0.1",
+      "packageName": "@eum-agent/llm-zhipu",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "Zhipu GLM Model Connection",
+        "zh-CN": "模型接入 · 智谱 GLM"
+      },
+      "description": {
+        "en-US": "Zhipu GLM model provider with domestic and international endpoints",
+        "zh-CN": "智谱 GLM 模型服务与国内、国际端点"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/llm-zhipu/-/llm-zhipu-1.0.1.tgz",
+        "integrity": "sha512-4aq+DOq7aq6erqKIRe6Dg3qFM4/dB9ljGRDc59YchTzhL28pfk+YKlUdGSgS2LhKOO5DY+/aEH36JMU7XcB4fQ==",
+        "size": 4009
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:10:39.558Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/llm-zhipu/-/llm-zhipu-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fllm-zhipu/1.0.1"
         ]
       }
     },
@@ -729,6 +1401,62 @@
       }
     },
     {
+      "releaseId": "@eum-agent/session-todo@1.0.1",
+      "packageName": "@eum-agent/session-todo",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "Session Todo List",
+        "zh-CN": "会话待办清单"
+      },
+      "description": {
+        "en-US": "Todo items and progress maintained within a conversation",
+        "zh-CN": "在对话中维护待办事项与任务进度"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/session-todo/-/session-todo-1.0.1.tgz",
+        "integrity": "sha512-fa/OLEc07yZ5vD0HHgpbxobPsNCzvd7fIitNq++m8W/Tniqi3rGF5Pae8EGNusuGIEhRjKjmZR9B9i+kNrK7kg==",
+        "size": 9581
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:09:19.400Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/session-todo/-/session-todo-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fsession-todo/1.0.1"
+        ]
+      }
+    },
+    {
       "releaseId": "@eum-agent/web-shell@1.0.0",
       "packageName": "@eum-agent/web-shell",
       "version": "1.0.0",
@@ -781,6 +1509,62 @@
         "evidence": [
           "https://registry.npmjs.org/@eum-agent/web-shell/-/web-shell-1.0.0.tgz",
           "https://registry.npmjs.org/%40eum-agent%2Fweb-shell/1.0.0"
+        ]
+      }
+    },
+    {
+      "releaseId": "@eum-agent/web-shell@1.0.1",
+      "packageName": "@eum-agent/web-shell",
+      "version": "1.0.1",
+      "defaultInstall": true,
+      "displayName": {
+        "en-US": "Terminal",
+        "zh-CN": "终端"
+      },
+      "description": {
+        "en-US": "Sessionless host-account interactive terminals",
+        "zh-CN": "独立的主机账号交互终端"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "YaoGuang",
+        "url": "https://github.com/yanxuan-lc/yaoguang"
+      },
+      "authors": [
+        {
+          "name": "yanxuan-lc",
+          "url": "https://github.com/yanxuan-lc"
+        }
+      ],
+      "source": {
+        "repository": "https://github.com/yanxuan-lc/yaoguang",
+        "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+      },
+      "artifact": {
+        "tarballUrl": "https://registry.npmjs.org/@eum-agent/web-shell/-/web-shell-1.0.1.tgz",
+        "integrity": "sha512-ucNuVhUl6LFizpwLNpGaDvvP4Mo84y+9lWksvwuV1HR0BsUq03qn59aGZsWzfPbqamX+ks2ZM9+FzySeCVMSaw==",
+        "size": 173711
+      },
+      "compatibility": {
+        "productRange": ">=1.0.4",
+        "platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "x64"
+          }
+        ]
+      },
+      "requiredProtocols": [],
+      "review": {
+        "reviewedAt": "2026-10-16T06:14:53.062Z",
+        "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+        "evidence": [
+          "https://registry.npmjs.org/@eum-agent/web-shell/-/web-shell-1.0.1.tgz",
+          "https://registry.npmjs.org/%40eum-agent%2Fweb-shell/1.0.1"
         ]
       }
     }

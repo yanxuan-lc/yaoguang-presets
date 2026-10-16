@@ -1,0 +1,56 @@
+{
+  "releaseId": "@eum-agent/llm-anthropic@1.0.1",
+  "packageName": "@eum-agent/llm-anthropic",
+  "version": "1.0.1",
+  "defaultInstall": true,
+  "displayName": {
+    "en-US": "Anthropic Model Connection",
+    "zh-CN": "模型接入 · Anthropic"
+  },
+  "description": {
+    "en-US": "Anthropic model provider and catalogue",
+    "zh-CN": "Anthropic 品牌供应商与模型目录"
+  },
+  "publisher": {
+    "kind": "official",
+    "name": "YaoGuang",
+    "url": "https://github.com/yanxuan-lc/yaoguang"
+  },
+  "authors": [
+    {
+      "name": "yanxuan-lc",
+      "url": "https://github.com/yanxuan-lc"
+    }
+  ],
+  "source": {
+    "repository": "https://github.com/yanxuan-lc/yaoguang",
+    "commit": "ea5b813911fd2567096acc416cfc2c0608eff0c0"
+  },
+  "artifact": {
+    "tarballUrl": "https://registry.npmjs.org/@eum-agent/llm-anthropic/-/llm-anthropic-1.0.1.tgz",
+    "integrity": "sha512-8G8+lM9+x6jJtYRRs1eLNF9XtwquVqhuQid+Vb68JxCrZqTvbwesmPdA7UhGNKSBIIGDMZmYO1EUbXoOLCESpg==",
+    "size": 3674
+  },
+  "compatibility": {
+    "productRange": ">=1.0.4",
+    "platforms": [
+      {
+        "os": "darwin",
+        "arch": "arm64"
+      },
+      {
+        "os": "linux",
+        "arch": "x64"
+      }
+    ]
+  },
+  "requiredProtocols": [],
+  "review": {
+    "reviewedAt": "2026-10-16T06:09:16.448Z",
+    "scope": "Maintainer review of the exact public npm archive: identity, version, SHA512, SHA1, compressed byte length, exported entry points, browser UI presence and dependency metadata; public bytes match the frozen local release archive. Source commit ea5b813911fd2567096acc416cfc2c0608eff0c0 passed make check (11,288 TypeScript tests and 134 Rust tests), make build and forty-package packed installation on macOS ARM64. Six infra-local native targets passed architecture, digest and assembly checks. Windows artifacts were cross-compiled; Windows runtime acceptance remains pending. Linux x64 Docker builds are build evidence and do not establish native-machine runtime acceptance. Catalog support remains darwin/arm64 and linux/x64 within the accepted maintainer release scope. Compatibility requires product >=1.0.4, with no maximum version bound. Fresh public CLI 1.0.4 and fourteen-default installation and activation acceptance has not yet run. Paid provider calls, exhaustive dependency security audits and other target runtime acceptance are outside this review. Source is private; commit binding is maintainer supplied. No npm provenance or GitHub Actions evidence is claimed.",
+    "evidence": [
+      "https://registry.npmjs.org/@eum-agent/llm-anthropic/-/llm-anthropic-1.0.1.tgz",
+      "https://registry.npmjs.org/%40eum-agent%2Fllm-anthropic/1.0.1"
+    ]
+  }
+}

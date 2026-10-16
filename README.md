@@ -135,7 +135,7 @@ test/catalog.test.mjs
 
 ## 已核验扩展目录
 
-`extensions/index.json` 是独立生成的精确发行物目录；每份记录放在 `extensions/releases/<名称>-<版本>.json`，使用 `schema/extensions.schema.json`。当前目录收录首批十四份官方发行记录，未发布包和合成测试记录不进入可安装清单。克隆、构建、刷新目录都不会安装扩展，沙箱 schema、生成字节、权限和安装行为保持原契约。扩展单独的入口为 `node scripts/extensions.mjs build`／`validate`。
+`extensions/index.json` 是独立生成的精确发行物目录；每份记录放在 `extensions/releases/<名称>-<版本>.json`，使用 `schema/extensions.schema.json`。当前目录收录十四个官方扩展的二十八份精确发行记录，保留历史 `1.0.0` 并新增当前 `1.0.1`；未发布包和合成测试记录不进入可安装清单。克隆、构建、刷新目录都不会安装扩展，沙箱 schema、生成字节、权限和安装行为保持原契约。扩展单独的入口为 `node scripts/extensions.mjs build`／`validate`。
 
 记录必须包含 npm 包名与完整 SemVer、显示名和说明、发布者种类 `official`／`third-party` 与名称网址、作者、精确源码提交、公共 npm tarball URL、SHA512 SRI 和压缩字节数、产品 SemVer 适用范围、实际 OS／CPU 组合、所需模型协议，以及带时区的审查日期、明确范围和至少一条公开 HTTPS 证据。验证整份目录时拒绝未知字段、来源枚举、重复发行记录、非法范围、空证据、任意 registry 和与名称版本不符的 tarball。
 
@@ -153,6 +153,10 @@ test/catalog.test.mjs
 ### 首批官方发行
 
 已完成真实 npm 发布并核对精确制品的十四项为 `web-shell`、`file-explorer`、`automation-schedule`、`integration-acp`、`integration-mcp`、`channel-feishu`、`session-todo`、`llm-openai`、`llm-anthropic`、`llm-deepseek`、`llm-zhipu`、`llm-kimi`、`llm-minimax`、`llm-chatgpt`（包名均为 `@eum-agent/` 前缀，版本均为 `1.0.0`）。记录使用实际 npm tarball URL、SHA512 integrity 和压缩字节数，均设置 `defaultInstall: true`，支持平台声明为 `darwin/arm64` 与 `linux/x64`；新状态根按前述兼容性规则参与一次默认安装。
+
+本次为同一组十四个扩展新增 `1.0.1` 精确发行记录，均已核对真实 npm 制品字节、SHA512、SHA1、大小、入口和依赖声明，源码提交为 `ea5b813911fd2567096acc416cfc2c0608eff0c0`。新记录使用最低产品版本约束 `>=1.0.4`，不设最高版本，保留 `defaultInstall: true` 及 `darwin/arm64`、`linux/x64` 平台范围。历史 `1.0.0` 记录保持原范围；新状态根选择每包最高兼容版本，已固定默认集合的状态根不自动升级。
+
+本次源码在 macOS ARM64 上通过完整检查（11,288 项 TypeScript 测试、134 项 Rust 测试）、构建和四十包隔离安装。六目标原生产物已验证架构、摘要和组装；Windows 交叉构建与 Linux x64 Docker 构建不代表对应真实机器的运行验收。CLI `1.0.4` 与十四个新默认扩展的真实安装、激活及线上目录交付仍待单独验收，目录记录不提前声明其通过。
 
 第三方发行仍通过公开 PR 与维护者审查准入，不使用测试身份冒充已批准社区包。平台支持声明、原生资产交叉编译与目标机器实际运行验收分别记录。
 
